@@ -30,9 +30,9 @@ export const site = {
     "I help founder-led and growing brands turn ideas into content that gets noticed — combining strategy, production, publishing and AI-assisted workflows.",
 
   /** Public path to the CV PDF, e.g. "/cv/khaled-elsawy-cv.pdf". */
-  cvUrl: null as string | null,
+  cvUrl: "/cv/khaled-elsawy-cv.pdf" as string | null,
   /** Public contact email. Used for the "Get In Touch" CTA. */
-  email: null as string | null,
+  email: "elsawykhaled662@gmail.com" as string | null,
 
   socials: [
     { label: "LinkedIn", href: null },

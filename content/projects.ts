@@ -37,8 +37,8 @@ export type Project = {
   /** Small badge in the card header: a logo image, or initials when no logo is supplied. */
   badge: { logo?: MediaAsset; initials: string };
   tone: ProjectTone;
-  /** Main card / case-study image. An array renders a line-up of cut-outs. */
-  hero: MediaAsset | MediaAsset[];
+  /** Main card / case-study image. */
+  hero: MediaAsset;
   /** Exactly three supporting images — the 1 large + 3 small card composition. */
   supporting: [MediaAsset, MediaAsset, MediaAsset];
   gallery?: MediaAsset[];
@@ -55,11 +55,12 @@ export const projects: Project[] = [
     slug: "alexfisher",
     title: "AlexFisher",
     client: "AlexFisher (own creator brand)",
-    role: "Creator, presenter & producer",
+    role: "Founder, video producer & social media creator",
     category: "Creator Brand",
     description:
       "Content around fishing, adventure and outdoor lifestyle — combining real experiences, useful knowledge and audience-focused storytelling.",
     tags: ["YouTube", "Lifestyle"],
+    year: "2020–Present",
     badge: { initials: "AF" },
     tone: "sea",
     hero: {
@@ -77,6 +78,8 @@ export const projects: Project[] = [
         heading: "The creator brand",
         body: [
           "AlexFisher is a creator and media brand built around fishing, adventure and outdoor lifestyle — real experiences on the water, practical know-how and storytelling made for the audience.",
+          "I built and manage a 600K+ cross-platform audience across YouTube, Facebook and Instagram, and own the full video lifecycle: research, concept, scripting, filming, editing, sound design, thumbnails, SEO, publishing and post-performance optimisation.",
+          "Videos and social content have reached millions of views, with audience data, retention and engagement signals feeding back into what gets made next.",
         ],
       },
       {
@@ -91,33 +94,22 @@ export const projects: Project[] = [
     slug: "bisi-and-friends",
     title: "Bisi and Friends",
     client: "TOC Publishing UK",
-    role: "AI video production",
+    role: "AI video producer, content & social media",
     category: "AI Video Production",
     description:
       "Children's storytelling produced with AI-assisted animation, character consistency, lip-sync and multi-platform social adaptation.",
     tags: ["AI Video", "Children's Content"],
+    year: "2026–Present",
     badge: {
       initials: "TOC",
       logo: { src: "/assets/logos/toc-publishing-logo.png", alt: "TOC Publishing logo", label: "TOC Publishing" },
     },
     tone: "studio",
-    hero: [
-      {
-        src: "/assets/bisi-and-friends/funmi.png",
-        alt: "Funmi, a Bisi and Friends character, in a teal shirt and navy trousers",
-        label: "Funmi",
-      },
-      {
-        src: "/assets/bisi-and-friends/bisi.png",
-        alt: "Bisi, the lead Bisi and Friends character, in her school uniform",
-        label: "Bisi",
-      },
-      {
-        src: "/assets/bisi-and-friends/mia.png",
-        alt: "Mia, a Bisi and Friends character with red curly hair and glasses",
-        label: "Mia",
-      },
-    ],
+    hero: {
+      src: "/assets/bisi-and-friends/episode-our-values.webp",
+      alt: "Bisi and Friends episode artwork: Bisi, Mia and classmates outside their school under the title “Our values become our superpowers!”",
+      label: "Our Values Become Our Superpowers",
+    },
     supporting: [
       {
         src: "/assets/bisi-and-friends/bisi.png",
@@ -138,17 +130,40 @@ export const projects: Project[] = [
         position: "50% 6%",
       },
     ],
+    gallery: [
+      {
+        src: "/assets/bisi-and-friends/episode-supers-special-lunch.webp",
+        alt: "Bisi and Friends episode artwork: a boy with a medical-alert lanyard rides a dinosaur under the title “Super's Special Lunch”",
+        label: "Super's Special Lunch",
+      },
+    ],
     featured: true,
+    caseStudySections: [
+      {
+        heading: "The project",
+        body: [
+          "Bisi and Friends is a children's storytelling series for TOC Publishing UK, following Bisi, Mia, Dr Funmi and their classmates through everyday stories with a message.",
+          "I produce social videos and AI story videos from script through AI-assisted production, character consistency, lip-sync, editing and final delivery.",
+        ],
+      },
+      {
+        heading: "Built for every platform",
+        body: [
+          "Each story is adapted for Instagram, TikTok and YouTube, alongside support for content planning, outreach and publishing.",
+        ],
+      },
+    ],
   },
   {
     slug: "costa-coffee",
     title: "Costa Coffee",
     client: "Costa Coffee, South West London",
-    role: "Social media video & photography",
+    role: "Social media content creator",
     category: "Social Media Content",
     description:
       "Instagram video, photography and branded social content created for Costa Coffee in South West London.",
     tags: ["Social Content", "Brand"],
+    year: "2025–2026",
     badge: { initials: "CC" },
     tone: "espresso",
     hero: { alt: "Costa Coffee branded social content", label: "Costa Coffee hero shot" },
@@ -158,6 +173,15 @@ export const projects: Project[] = [
       { alt: "Behind-the-scenes content capture", label: "Content" },
     ],
     featured: true,
+    caseStudySections: [
+      {
+        heading: "The work",
+        body: [
+          "Instagram video, photography and branded social assets for Costa Coffee in South West London — focused on stronger engagement, visual consistency and local audience relevance.",
+          "I planned, shot and edited the content while monitoring performance and refining the creative direction.",
+        ],
+      },
+    ],
   },
 ];
 
@@ -170,9 +194,4 @@ export function getProject(slug: string): Project | undefined {
 export function getNextProject(slug: string): Project {
   const index = projects.findIndex((project) => project.slug === slug);
   return projects[(index + 1) % projects.length];
-}
-
-/** First image of a project — used for Open Graph and listings. */
-export function primaryImage(project: Project): MediaAsset {
-  return Array.isArray(project.hero) ? project.hero[0] : project.hero;
 }

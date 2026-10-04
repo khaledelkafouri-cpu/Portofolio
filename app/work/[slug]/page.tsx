@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getNextProject, getProject, primaryImage, projects } from "@/content/projects";
+import { getNextProject, getProject, projects } from "@/content/projects";
 import { CaseStudyHeader } from "@/components/projects/CaseStudyHeader";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 import { ProjectMedia } from "@/components/projects/ProjectMedia";
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/work/[slug]">): P
   const project = getProject(slug);
   if (!project) return {};
 
-  const image = primaryImage(project);
+  const image = project.hero;
   return {
     title: `${project.title} — ${project.category}`,
     description: project.description,
@@ -53,7 +53,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             tone={project.tone}
             preload
             sizes="(min-width: 1280px) 1216px, 100vw"
-            className="aspect-[16/10] rounded-lg sm:aspect-[21/9]"
+            className="aspect-video rounded-lg"
           />
         </div>
 

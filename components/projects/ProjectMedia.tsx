@@ -18,7 +18,7 @@ const toneClasses: Record<ProjectTone, { surface: string; text: string }> = {
 };
 
 type ProjectMediaProps = {
-  media: MediaAsset | MediaAsset[];
+  media: MediaAsset;
   tone: ProjectTone;
   /** Passed straight to next/image. */
   sizes: string;
@@ -28,18 +28,15 @@ type ProjectMediaProps = {
 };
 
 /**
- * Renders a project image slot:
- * - a single image (cropped to fill),
- * - an array of images as a cut-out line-up on the tone backdrop,
- * - or a labelled placeholder when the real asset has not been supplied yet.
+ * Renders a project image slot: the image cropped to fill (on the tone backdrop,
+ * so transparent cut-outs sit on colour), or a labelled placeholder when the
+ * real asset has not been supplied yet.
  */
 export function ProjectMedia({ media, tone, sizes, className = "", compact = false, preload }: ProjectMediaProps) {
   const toneStyle = toneClasses[tone];
   return (
     <div className={`relative overflow-hidden ${toneStyle.surface} ${className}`}>
-      {Array.isArray(media) ? (
-        <Lineup items={media} sizes={sizes} preload={preload} />
-      ) : media.src ? (
+      {media.src ? (
         <Image
           src={media.src}
           alt={media.alt}
@@ -51,34 +48,6 @@ export function ProjectMedia({ media, tone, sizes, className = "", compact = fal
         />
       ) : (
         <Placeholder media={media} textClass={toneStyle.text} compact={compact} />
-      )}
-    </div>
-  );
-}
-
-function Lineup({ items, sizes, preload }: { items: MediaAsset[]; sizes: string; preload?: boolean }) {
-  // Centre item is the lead character: brought forward and slightly larger.
-  const lead = Math.floor(items.length / 2);
-  return (
-    <div className="absolute inset-0 flex items-start justify-center pt-[5%]">
-      {items.map((item, index) =>
-        item.src ? (
-          <div
-            key={item.label}
-            className={`relative -mx-[3%] aspect-[3/5] shrink-0 ${
-              index === lead ? "z-10 h-[150%]" : "h-[132%] translate-y-[6%]"
-            }`}
-          >
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              sizes={sizes}
-              preload={preload && index === lead}
-              className="object-contain object-top"
-            />
-          </div>
-        ) : null,
       )}
     </div>
   );
