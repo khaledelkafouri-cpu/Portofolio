@@ -36,7 +36,7 @@ export function ButtonLink({
       {...props}
     >
       {iconStart && <Icon name={iconStart} className="size-[1.125rem]" />}
-      <span>{children}</span>
+      <span className="whitespace-nowrap">{children}</span>
       {iconEnd && (
         <Icon
           name={iconEnd}

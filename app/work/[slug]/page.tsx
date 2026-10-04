@@ -41,6 +41,11 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
   const next = getNextProject(project.slug);
   const sections = project.caseStudySections ?? [];
   const gallery = [...project.supporting, ...(project.gallery ?? [])];
+  const links = [
+    ...(project.videoUrl ? [{ label: "Watch the video", href: project.videoUrl }] : []),
+    ...(project.externalUrl ? [{ label: "Visit website", href: project.externalUrl }] : []),
+    ...(project.links ?? []),
+  ];
 
   return (
     <>
@@ -81,28 +86,29 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             </p>
           </div>
 
-          <aside aria-label="Project links" className="space-y-3 lg:col-span-4 lg:col-start-9">
-            {project.videoUrl && (
-              <a
-                href={project.videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-between rounded-md border border-line px-4 text-sm font-medium text-ink hover:border-ink"
-              >
-                Watch the video <Icon name="external" className="size-4" />
-              </a>
-            )}
-            {project.externalUrl && (
-              <a
-                href={project.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-between rounded-md border border-line px-4 text-sm font-medium text-ink hover:border-ink"
-              >
-                Visit project <Icon name="external" className="size-4" />
-              </a>
-            )}
-          </aside>
+          {links.length > 0 && (
+            <aside aria-labelledby="links-title" className="lg:col-span-4 lg:col-start-9">
+              <h2 id="links-title" className="eyebrow text-stone">
+                Links
+              </h2>
+              <ul className="mt-4 space-y-2">
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex min-h-12 items-center justify-between rounded-md border border-line px-4 text-sm font-medium text-ink transition-colors hover:border-ink"
+                    >
+                      {link.label}
+                      <Icon name="external" className="size-4" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
         </div>
 
         <section aria-labelledby="gallery-title" className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-24">

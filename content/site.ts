@@ -37,8 +37,10 @@ export const site = {
   socials: [
     { label: "LinkedIn", href: null },
     { label: "Behance", href: null },
-    { label: "YouTube", href: null },
-    { label: "Instagram", href: null },
+    { label: "YouTube", href: "https://www.youtube.com/@alexfisher_khaled" },
+    { label: "Instagram", href: "https://www.instagram.com/alexfisher_khaled/" },
+    { label: "TikTok", href: "https://www.tiktok.com/@alexfisher_khaled" },
+    { label: "Facebook", href: "https://www.facebook.com/AlexFisher.Fishing.Vlogs" },
   ] satisfies SocialLink[],
 
   portrait: {

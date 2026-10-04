@@ -29,7 +29,7 @@ export function ContactCTA() {
         </div>
 
         {(site.email || socials.length > 0) && (
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div className="flex shrink-0 flex-col items-start gap-4">
             {site.email && (
               <ButtonLink href={`mailto:${site.email}`} variant="inverse" iconStart="mail" iconEnd="arrowRight">
                 Get In Touch

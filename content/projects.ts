@@ -43,7 +43,10 @@ export type Project = {
   supporting: [MediaAsset, MediaAsset, MediaAsset];
   gallery?: MediaAsset[];
   videoUrl?: string;
+  /** Main project website. */
   externalUrl?: string;
+  /** Other public profiles for the project, e.g. channels. */
+  links?: { label: string; href: string }[];
   year?: string;
   metrics?: { value: string; label: string }[];
   featured: boolean;
@@ -61,6 +64,13 @@ export const projects: Project[] = [
       "Content around fishing, adventure and outdoor lifestyle — combining real experiences, useful knowledge and audience-focused storytelling.",
     tags: ["YouTube", "Lifestyle"],
     year: "2020–Present",
+    externalUrl: "https://www.alexfisherofficial.com/",
+    links: [
+      { label: "YouTube", href: "https://www.youtube.com/@alexfisher_khaled" },
+      { label: "Instagram", href: "https://www.instagram.com/alexfisher_khaled/" },
+      { label: "TikTok", href: "https://www.tiktok.com/@alexfisher_khaled" },
+      { label: "Facebook", href: "https://www.facebook.com/AlexFisher.Fishing.Vlogs" },
+    ],
     badge: { initials: "AF" },
     tone: "sea",
     hero: {
