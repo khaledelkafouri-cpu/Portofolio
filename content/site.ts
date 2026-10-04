@@ -35,7 +35,7 @@ export const site = {
   email: "elsawykhaled662@gmail.com" as string | null,
 
   socials: [
-    { label: "LinkedIn", href: null },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/khaled-elsawy-695463a2/" },
     { label: "Behance", href: null },
     { label: "YouTube", href: "https://www.youtube.com/@alexfisher_khaled" },
     { label: "Instagram", href: "https://www.instagram.com/alexfisher_khaled/" },
@@ -44,7 +44,7 @@ export const site = {
   ] satisfies SocialLink[],
 
   portrait: {
-    src: "/assets/khaled/portrait.png",
+    src: "/assets/khaled/khaled-elsawy-portrait.png",
     alt: "Portrait of Khaled Elsawy smiling, wearing a blue t-shirt",
   },
 } as const;

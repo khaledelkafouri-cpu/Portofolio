@@ -176,11 +176,28 @@ export const projects: Project[] = [
     year: "2025–2026",
     badge: { initials: "CC" },
     tone: "espresso",
-    hero: { alt: "Costa Coffee branded social content", label: "Costa Coffee hero shot" },
+    hero: {
+      src: "/assets/costa/costa-team.webp",
+      alt: "Four Costa Coffee baristas behind the counter, three making heart shapes with their hands, under the store's coffee menu boards",
+      label: "Costa Coffee team",
+      position: "50% 45%",
+    },
     supporting: [
-      { alt: "Coffee close-up", label: "Coffee" },
-      { alt: "Costa Coffee store front", label: "Store" },
-      { alt: "Behind-the-scenes content capture", label: "Content" },
+      {
+        src: "/assets/costa/costa-menu-boards.webp",
+        alt: "Costa Coffee menu boards: Mild & Milky latte and Famously Frothy cappuccino",
+        label: "Menu boards",
+      },
+      {
+        src: "/assets/costa/costa-team-heart-left.webp",
+        alt: "Costa barista making a heart shape with his hands",
+        label: "Barista",
+      },
+      {
+        src: "/assets/costa/costa-team-heart-right.webp",
+        alt: "Costa barista smiling and making a heart shape with her hands",
+        label: "Team",
+      },
     ],
     featured: true,
     caseStudySections: [
