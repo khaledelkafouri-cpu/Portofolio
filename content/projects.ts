@@ -74,13 +74,27 @@ export const projects: Project[] = [
     badge: { initials: "AF" },
     tone: "sea",
     hero: {
-      alt: "Khaled as AlexFisher, fishing on the water",
-      label: "Khaled / AlexFisher on the water",
+      src: "/assets/alexfisher/alexfisher-tiny-planet.webp",
+      alt: "Khaled as AlexFisher holding up a freshly caught fish and a fishing rod, in a 360° tiny-planet shot of a palm-lined seafront",
+      label: "Khaled / AlexFisher",
+      position: "50% 25%",
     },
     supporting: [
-      { alt: "Close-up of a fishing reel", label: "Fishing reel" },
-      { alt: "Underwater sea and fishing environment", label: "Sea / underwater" },
-      { alt: "Close-up of a fishing lure", label: "Fishing lure" },
+      {
+        src: "/assets/alexfisher/alexfisher-reel.webp",
+        alt: "Close-up of the fishing reel and rod in Khaled's hand",
+        label: "Fishing reel",
+      },
+      {
+        src: "/assets/alexfisher/alexfisher-sea.webp",
+        alt: "Turquoise sea breaking along a rocky, palm-lined coast",
+        label: "Sea",
+      },
+      {
+        src: "/assets/alexfisher/alexfisher-fish.webp",
+        alt: "Khaled holding up the fish he caught",
+        label: "The catch",
+      },
     ],
     featured: true,
     caseStudySections: [

@@ -36,7 +36,7 @@ export const site = {
 
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/khaled-elsawy-695463a2/" },
-    { label: "Behance", href: null },
+    { label: "Behance", href: "https://www.behance.net/khaledkafouri" },
     { label: "YouTube", href: "https://www.youtube.com/@alexfisher_khaled" },
     { label: "Instagram", href: "https://www.instagram.com/alexfisher_khaled/" },
     { label: "TikTok", href: "https://www.tiktok.com/@alexfisher_khaled" },
