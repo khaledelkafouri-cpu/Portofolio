@@ -43,7 +43,7 @@ export function ProjectMedia({ media, tone, sizes, className = "", compact = fal
           fill
           sizes={sizes}
           preload={preload}
-          className="object-cover"
+          className={media.fit === "contain" ? "object-contain p-[8%]" : "object-cover"}
           style={{ objectPosition: media.position ?? "50% 50%" }}
         />
       ) : (

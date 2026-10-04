@@ -14,6 +14,8 @@ export type MediaAsset = {
   label: string;
   /** CSS object-position, e.g. "50% 10%". */
   position?: string;
+  /** "contain" shows the whole image on the project backdrop (e.g. product cut-outs). Default "cover". */
+  fit?: "cover" | "contain";
 };
 
 /** Background tone painted behind transparent images and placeholders. */
@@ -205,19 +207,22 @@ export const projects: Project[] = [
     },
     supporting: [
       {
-        src: "/assets/costa/costa-menu-boards.webp",
-        alt: "Costa Coffee menu boards: Mild & Milky latte and Famously Frothy cappuccino",
-        label: "Menu boards",
-      },
-      {
-        src: "/assets/costa/costa-team-heart-left.webp",
-        alt: "Costa barista making a heart shape with his hands",
+        src: "/assets/costa/costa-barista-machine.webp",
+        alt: "Costa barista working at the espresso machine under the Famously Frothy menu board",
         label: "Barista",
+        position: "50% 30%",
       },
       {
-        src: "/assets/costa/costa-team-heart-right.webp",
-        alt: "Costa barista smiling and making a heart shape with her hands",
-        label: "Team",
+        src: "/assets/costa/costa-latte-pour.webp",
+        alt: "Costa barista pouring steamed milk into a cup at the counter",
+        label: "Latte pour",
+        position: "50% 30%",
+      },
+      {
+        src: "/assets/costa/costa-cup.webp",
+        alt: "Costa Coffee takeaway cup",
+        label: "Costa cup",
+        fit: "contain",
       },
     ],
     featured: true,
