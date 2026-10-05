@@ -132,7 +132,7 @@ export const projects: Project[] = [
     description:
       "Children's storytelling produced with AI-assisted animation, character consistency, lip-sync and multi-platform social adaptation.",
     tags: ["AI Video", "Children's Content"],
-    year: "2026–Present",
+    year: "2025–Present",
     badge: {
       initials: "TOC",
       logo: { src: "/assets/logos/toc-publishing-logo.png", alt: "TOC Publishing logo", label: "TOC Publishing" },
