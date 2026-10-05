@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
 const out = process.env.OUT ?? here("../public/cv/khaled-elsawy-cv.pdf");
 let html = await readFile(here("./khaled-elsawy-cv.html"), "utf8");
-if (process.env.PHONE) html = html.replace("<!--PHONE-->", `<span>${process.env.PHONE}</span>`);
+if (process.env.PHONE) html = html.replace("<!--PHONE-->", ` | ${process.env.PHONE}`);
 
 const browser = await chromium.launch();
 const page = await browser.newPage();

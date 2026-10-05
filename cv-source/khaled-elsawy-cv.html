@@ -20,14 +20,15 @@
   .head { background: #f2f1ef; padding: 14pt 20pt 10pt; text-align: center; }
   .head h1 { font-size: 24pt; line-height: 1.1; color: #2b2b2b; }
   .head .role { font-style: italic; font-size: 12pt; color: #444; margin-top: 5pt; }
-  .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 3pt 18pt; margin-top: 9pt; font-size: 9pt; color: #333; }
-  .contact a { border-bottom: 0.5pt solid #bbb; }
+  .contact { margin-top: 8pt; font-size: 9pt; color: #333; }
+  .contact + .contact { margin-top: 3pt; }
   .summary { margin-top: 10pt; font-size: 9.2pt; }
   .summary p + p { margin-top: 3pt; }
   h2 { font-size: 11.5pt; font-weight: bold; color: #222; margin-top: 11pt; padding-bottom: 3pt; border-bottom: 0.8pt solid #333; }
-  .job { display: grid; grid-template-columns: 112pt 1fr; margin-top: 7pt; }
-  .meta { font-style: italic; color: #555; font-size: 9pt; }
+  .job { margin-top: 7pt; }
+  .jobhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
   .job h3 { font-size: 10pt; }
+  .dates { font-size: 9pt; color: #444; white-space: nowrap; }
   .org { font-style: italic; color: #555; font-size: 9.4pt; }
   .job ul { list-style: none; margin-top: 3pt; }
   .job li { padding-left: 9pt; text-indent: -6pt; margin-top: 2.5pt; }
@@ -44,17 +45,9 @@
   <header class="head">
     <h1>Khaled Elsawy</h1>
     <p class="role">Social Media Content Creator</p>
-    <p class="contact">
-      <a href="mailto:elsawykhaled662@gmail.com">elsawykhaled662@gmail.com</a>
-      <!--PHONE-->
-      <a href="https://www.linkedin.com/in/khaled-elsawy-695463a2/">LinkedIn</a>
-      <a href="https://www.behance.net/khaledkafouri">Behance</a>
-      <a href="https://www.youtube.com/@alexfisher_khaled">YouTube</a>
-      <a href="https://www.instagram.com/alexfisher_khaled/">Instagram</a>
-      <a href="https://www.tiktok.com/@alexfisher_khaled">TikTok</a>
-      <a href="https://www.facebook.com/AlexFisher.Fishing.Vlogs">Facebook</a>
-      <a href="https://www.alexfisherofficial.com/">alexfisherofficial.com</a>
-    </p>
+    <!-- Plain text with separators so ATS parsers read each line in order. -->
+    <p class="contact">Alexandria, Egypt | <a href="mailto:elsawykhaled662@gmail.com">elsawykhaled662@gmail.com</a><!--PHONE--></p>
+    <p class="contact"><a href="https://www.linkedin.com/in/khaled-elsawy-695463a2/">linkedin.com/in/khaled-elsawy-695463a2</a> | <a href="https://www.behance.net/khaledkafouri">behance.net/khaledkafouri</a> | <a href="https://www.youtube.com/@alexfisher_khaled">youtube.com/@alexfisher_khaled</a></p>
   </header>
 
   <section class="summary">
@@ -65,10 +58,9 @@
   <h2>PROFESSIONAL EXPERIENCE</h2>
 
   <div class="job">
-    <p class="meta">Creator Brand<br>2020 – Present</p>
     <div>
-      <h3>Founder, Video Producer &amp; Social Media Creator</h3>
-      <p class="org"><a href="https://www.alexfisherofficial.com/">AlexFisher</a></p>
+      <div class="jobhead"><h3>Founder, Video Producer &amp; Social Media Creator</h3><p class="dates">Mar 2020 – Present</p></div>
+      <p class="org"><a href="https://www.alexfisherofficial.com/">AlexFisher</a> · Creator Brand · alexfisherofficial.com</p>
       <ul>
         <li>Built and managed a 600K+ cross-platform audience across YouTube, Facebook and Instagram, producing original marine, fishing and lifestyle content.</li>
         <li>Own the full video lifecycle: research, concept, scripting, filming, editing, sound design, thumbnails, SEO, publishing and post-performance optimisation.</li>
@@ -78,10 +70,9 @@
   </div>
 
   <div class="job">
-    <p class="meta">United Kingdom<br>2026 – Present</p>
     <div>
-      <h3>AI Video Producer, Content &amp; Social Media</h3>
-      <p class="org">TOC Publishing UK</p>
+      <div class="jobhead"><h3>AI Video Producer, Content &amp; Social Media</h3><p class="dates">Jan 2025 – Present</p></div>
+      <p class="org">TOC Publishing UK · United Kingdom</p>
       <ul>
         <li>Produce social videos and AI Story videos from script through AI-assisted production, character consistency, lip-sync, editing and final delivery.</li>
         <li>Adapt creative assets for Instagram, TikTok and YouTube while supporting content planning, outreach and publishing.</li>
@@ -90,10 +81,9 @@
   </div>
 
   <div class="job">
-    <p class="meta">London, UK<br>2025 – 2026</p>
     <div>
-      <h3>Social Media Content Creator</h3>
-      <p class="org">Costa Coffee – South West London, UK</p>
+      <div class="jobhead"><h3>Social Media Content Creator</h3><p class="dates">Oct 2025 – May 2026</p></div>
+      <p class="org">Costa Coffee · South West London, UK</p>
       <ul>
         <li>Created Instagram video, photography and branded social assets focused on stronger engagement, visual consistency and local audience relevance.</li>
         <li>Planned, shot and edited social content while monitoring performance and refining creative direction.</li>
@@ -102,10 +92,9 @@
   </div>
 
   <div class="job">
-    <p class="meta">Remote / Global<br>2023 – Present</p>
     <div>
-      <h3>Video Producer &amp; AI Content Creator</h3>
-      <p class="org">Freelance</p>
+      <div class="jobhead"><h3>Video Producer &amp; AI Content Creator</h3><p class="dates">2023 – Present</p></div>
+      <p class="org">Freelance · Remote</p>
       <ul>
         <li>Create short- and long-form branded video using Adobe Creative Cloud and generative AI, combining traditional production with faster AI-assisted ideation and versioning.</li>
       </ul>
@@ -131,6 +120,6 @@
   </div>
 
   <h2>TOOLS</h2>
-  <p class="tools">Premiere Pro • After Effects • Photoshop • Higgsfield • Kling • ElevenLabs • ChatGPT • Claude • Claude Code • Codex • VS Code • Google Analytics • Meta Ads</p>
+  <p class="tools">Premiere Pro • After Effects • Photoshop • Canva • CapCut • Higgsfield • Kling • ElevenLabs • ChatGPT • Claude • Claude Code • Codex • VS Code • Google Analytics • Meta Ads</p>
 </body>
 </html>
