@@ -9,34 +9,41 @@
 <meta charset="utf-8">
 <title>Khaled Elsawy — CV</title>
 <style>
+  @font-face { font-family: "Inter"; font-weight: 400; font-style: normal; src: url(fonts/inter-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 400; font-style: italic; src: url(fonts/inter-latin-400-italic.woff2) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 600; font-style: normal; src: url(fonts/inter-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 700; font-style: normal; src: url(fonts/inter-latin-700-normal.woff2) format("woff2"); }
+
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
-    color: #222; font-size: 8.8pt; line-height: 1.22;
+    font-family: "Inter", "Liberation Sans", Arial, sans-serif;
+    color: #26262a; font-size: 8.4pt; line-height: 1.32;
+    font-feature-settings: "kern", "liga";
     padding: 20pt 34pt 12pt;
   }
   a { color: inherit; text-decoration: none; }
-  .head { background: #f2f1ef; padding: 10pt 20pt 8pt; text-align: center; }
-  .head h1 { font-size: 22pt; line-height: 1.1; color: #2b2b2b; }
-  .head .role { font-style: italic; font-size: 12pt; color: #444; margin-top: 5pt; }
-  .contact { margin-top: 8pt; font-size: 9pt; color: #333; }
-  .contact + .contact { margin-top: 3pt; }
-  .summary { margin-top: 5pt; font-size: 9pt; }
+  .head { background: #f3f2ef; padding: 12pt 20pt 10pt; text-align: center; }
+  .head h1 { font-size: 22pt; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: #18181b; }
+  .head .role { font-size: 10.5pt; font-weight: 600; color: #8c1c2c; margin-top: 4pt; letter-spacing: 0.01em; }
+  .contact { margin-top: 7pt; font-size: 8.4pt; color: #3f3f46; }
+  .contact + .contact { margin-top: 2pt; }
+  .summary { margin-top: 5pt; }
   .summary p + p { margin-top: 3pt; }
-  h2 { font-size: 11.5pt; font-weight: bold; color: #222; margin-top: 8pt; padding-bottom: 3pt; border-bottom: 0.8pt solid #333; }
-  .job { margin-top: 6pt; }
+  h2 { font-size: 10pt; font-weight: 700; color: #18181b; margin-top: 10pt; padding-bottom: 3pt; border-bottom: 0.75pt solid #18181b; }
+  .job { margin-top: 6.5pt; }
   .jobhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
-  .job h3 { font-size: 10pt; }
-  .dates { font-size: 9pt; color: #444; white-space: nowrap; }
-  .org { font-style: italic; color: #555; font-size: 9.4pt; }
-  .job ul { list-style: none; margin-top: 3pt; }
-  .job li { padding-left: 9pt; text-indent: -6pt; margin-top: 2.5pt; }
-  .job li::before { content: "• "; }
-  .skills { margin-top: 6pt; display: grid; grid-template-columns: 118pt 1fr; }
-  .skills dt { font-weight: bold; font-size: 9pt; padding: 4pt 4pt 4pt 3pt; }
-  .skills dd { background: #f2f1ef; padding: 4pt 8pt; font-size: 8.6pt; }
-  .edu { margin-top: 6pt; font-weight: bold; font-size: 9pt; }
+  .job h3 { font-size: 9.4pt; font-weight: 600; color: #18181b; }
+  .dates { font-size: 8.4pt; color: #52525b; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .org { font-style: italic; color: #52525b; font-size: 8.6pt; margin-top: 0.5pt; }
+  .job ul { list-style: none; margin-top: 2.5pt; }
+  .job li { padding-left: 9pt; text-indent: -6pt; margin-top: 2pt; }
+  .job li::before { content: "• "; color: #71717a; }
+  .skills { margin-top: 6pt; display: grid; grid-template-columns: 112pt 1fr; }
+  .skills dt { font-weight: 600; font-size: 8.2pt; padding: 4pt 4pt 4pt 3pt; color: #18181b; }
+  .skills dd { background: #f3f2ef; padding: 4pt 8pt; }
+  .edu { margin-top: 6pt; }
+  .edu p { font-weight: 600; }
   .edu p + p { margin-top: 2pt; }
   .tools { margin-top: 6pt; }
 </style>
@@ -105,13 +112,13 @@
   <h2>PROFESSIONAL SKILLS</h2>
   <dl class="skills">
     <dt>CONTENT CREATION &amp;<br>VIDEO PRODUCTION</dt>
-    <dd>Concept Development • Scriptwriting • Copywriting • Storytelling • Filming • Photography • Video Editing • Short-Form Video • Long-Form Video • Sound Design • Motion Graphics • Thumbnail Design • AI-Assisted Production</dd>
+    <dd>Scriptwriting • Storytelling • Filming • Videography • Video Editing • Short-Form Video • Long-Form Video • Sound Design • Motion Graphics • Thumbnail Design • AI-Assisted Production</dd>
     <dt>SOCIAL MEDIA</dt>
     <dd>Social Media Management • Content Calendar &amp; Planning • Trend Research • UGC-Style Content • Creator &amp; Influencer Content • Instagram Reels • TikTok • YouTube &amp; YouTube Shorts • Facebook • Publishing &amp; Scheduling • Community Management • Platform Optimisation • Audience Growth • Social Media Analytics &amp; Reporting</dd>
     <dt>DIGITAL MARKETING &amp;<br>STRATEGY</dt>
-    <dd>Content Strategy • Digital Marketing Strategy • Campaign Planning • Paid Social (Meta Ads) • SEO • Audience Insight • Performance Analysis &amp; KPIs • Google Analytics • Brand Consistency • Stakeholder &amp; Client Collaboration</dd>
+    <dd>Content Strategy • Digital Marketing Strategy • Campaign Planning • SEO • Audience Insight • Performance Analysis &amp; KPIs • Google Analytics • Brand Consistency • CRM</dd>
     <dt>AI SYSTEMS &amp;<br>AUTOMATION</dt>
-    <dd>AI-Assisted Development • Websites • Dashboards • Internal Tools • Workflow Automation • Content Systems • Process Optimisation • Claude Code • Codex • VS Code</dd>
+    <dd>AI-Assisted Development (Vibe Coding) • Websites • Dashboards • Internal Tools • Workflow Automation • Content Systems • Process Optimisation</dd>
   </dl>
 
   <h2>EDUCATION</h2>
