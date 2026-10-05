@@ -18,6 +18,10 @@ if (process.env.HEADLINE) {
   html = html.replace(/<!--S-->.*?<!--\/S-->/, process.env.HEADLINE.split("|")[0].trim());
 }
 
+// Keep hyphenated terms ("Long-Form", "post-performance") on one line: when they wrap at the hyphen,
+// ATS text extraction glues the halves together ("LongForm") and the keyword no longer matches.
+html = keepHyphenatedWordsTogether(html);
+
 const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.setContent(html, { waitUntil: "load" });
@@ -33,4 +37,12 @@ async function inlineFonts(source) {
     source = source.replaceAll(`url(${url})`, `url(data:font/woff2;base64,${data})`);
   }
   return source;
+}
+
+function keepHyphenatedWordsTogether(source) {
+  const [head, body] = source.split("<body>");
+  const wrapped = body.replace(/>([^<]+)</g, (_, text) =>
+    `>${text.replace(/[\p{L}\d]+(?:-[\p{L}\d]+)+/gu, (word) => `<span style="white-space:nowrap">${word}</span>`)}<`,
+  );
+  return `${head}<body>${wrapped}`;
 }
