@@ -44,8 +44,8 @@ export const site = {
   ] satisfies SocialLink[],
 
   portrait: {
-    src: "/assets/khaled/khaled-elsawy-portrait.png",
-    alt: "Portrait of Khaled Elsawy smiling, wearing a blue t-shirt",
+    src: "/assets/khaled/khaled-elsawy-hero.jpg",
+    alt: "Khaled Elsawy smiling, sitting on stone steps at sunset with a camera in hand",
   },
 } as const;
 

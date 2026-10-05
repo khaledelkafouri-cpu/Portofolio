@@ -12,7 +12,7 @@ export function Monogram({ tone = "dark" }: { tone?: "dark" | "light" }) {
       >
         KE
       </span>
-      <span className="text-[0.8125rem] font-semibold uppercase tracking-[0.28em]">
+      <span className="whitespace-nowrap text-[0.8125rem] font-semibold uppercase tracking-[0.2em] lg:tracking-[0.28em]">
         {site.name}
       </span>
     </Link>
