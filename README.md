@@ -18,7 +18,7 @@ npm run dev        # http://localhost:3000
 | `npm run typecheck` | Generates route types, then `tsc --noEmit`   |
 | `npm run build`     | Production build                             |
 
-Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to the production domain (used for canonical URLs, Open Graph, sitemap and robots). On Vercel it falls back to the production deployment URL.
+Live at **https://khaledelsawy.vercel.app** (Vercel, deploys from `main`). The canonical URL, Open Graph, sitemap and robots use it by default; set `NEXT_PUBLIC_SITE_URL` (see `.env.example`) only to override it, e.g. after adding a custom domain.
 
 ## Structure
 
