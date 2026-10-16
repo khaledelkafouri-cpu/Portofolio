@@ -40,24 +40,26 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="mt-3 text-[0.9375rem] leading-relaxed text-stone">{project.description}</p>
 
         {topVideo?.href && (
-          <a
-            href={topVideo.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-auto flex items-center gap-3 border-t border-line pt-5 text-sm text-ink"
-          >
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-paper">
-              <Icon name="play" className="size-3.5 translate-x-px fill-current" />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block font-medium group-hover:underline">Watch top video</span>
-              <span className="block truncate text-stone">
-                {topVideo.views} views · {topVideo.title}
+          <div className="mt-auto pt-5">
+            <a
+              href={topVideo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 border-t border-line pt-5 text-sm text-ink"
+            >
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-paper">
+                <Icon name="play" className="size-3.5 translate-x-px fill-current" />
               </span>
-            </span>
-            <Icon name="external" className="size-4 shrink-0 text-stone" />
-            <span className="sr-only">(opens in a new tab)</span>
-          </a>
+              <span className="min-w-0 flex-1">
+                <span className="block font-medium group-hover:underline">Watch top video</span>
+                <span className="block truncate text-stone">
+                  {topVideo.views} views · {topVideo.title}
+                </span>
+              </span>
+              <Icon name="external" className="size-4 shrink-0 text-stone" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
         )}
       </div>
     </article>

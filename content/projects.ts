@@ -73,7 +73,11 @@ export const projects: Project[] = [
       src: "/assets/alexfisher/showreel/alexfisher-showreel.mp4",
       poster: "/assets/alexfisher/showreel/alexfisher-showreel-poster.webp",
     },
-    topVideo: { title: "Why can't we keep a great white shark?", views: "2.1M" },
+    topVideo: {
+      title: "Why can't we keep a great white shark?",
+      views: "2.1M",
+      href: "https://www.instagram.com/reel/DCCFrfzoFK7/",
+    },
     featured: true,
   },
   {
