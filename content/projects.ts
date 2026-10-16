@@ -105,6 +105,10 @@ export const projects: Project[] = [
       alt: "Bisi and Friends episode artwork: Bisi, Mia and classmates outside their school under the title “Our values become our superpowers!”",
       label: "Our Values Become Our Superpowers",
     },
+    showreel: {
+      src: "/assets/bisi-and-friends/showreel/bisi-showreel.mp4",
+      poster: "/assets/bisi-and-friends/showreel/bisi-showreel-poster.webp",
+    },
     featured: true,
   },
   {
