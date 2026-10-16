@@ -21,6 +21,19 @@ export type MediaAsset = {
 /** Background tone painted behind transparent images and placeholders. */
 export type ProjectTone = "sea" | "studio" | "espresso";
 
+/** One of the project's best videos: a cover that links out to the original post. */
+export type VideoItem = {
+  /** 3:4 cover image in /public, without a view count baked in (the site draws it). */
+  cover: string;
+  /** Short English caption shown under the cover. */
+  title: string;
+  /** Display string, e.g. "2.1M". */
+  views: string;
+  platform?: "YouTube" | "Instagram" | "TikTok" | "Facebook";
+  /** Link to the original post. Omit until known; the card then isn't clickable. */
+  href?: string;
+};
+
 export type CaseStudySection = {
   heading: string;
   body: string[];
@@ -53,6 +66,8 @@ export type Project = {
   metrics?: { value: string; label: string }[];
   featured: boolean;
   caseStudySections?: CaseStudySection[];
+  /** Best videos, shown as a cover grid on the case-study page. */
+  videos?: VideoItem[];
 };
 
 export const projects: Project[] = [
@@ -103,6 +118,13 @@ export const projects: Project[] = [
         src: "/assets/alexfisher/alexfisher-tiny-planet.webp",
         alt: "Khaled holding up a fish and a fishing rod in a 360° tiny-planet shot of a palm-lined seafront",
         label: "Tiny-planet catch",
+      },
+    ],
+    videos: [
+      {
+        cover: "/assets/alexfisher/videos/great-white-shark.webp",
+        title: "Why can't we keep a great white shark?",
+        views: "2.1M",
       },
     ],
     featured: true,

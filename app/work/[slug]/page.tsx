@@ -5,6 +5,7 @@ import { getNextProject, getProject, projects } from "@/content/projects";
 import { CaseStudyHeader } from "@/components/projects/CaseStudyHeader";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 import { ProjectMedia } from "@/components/projects/ProjectMedia";
+import { VideoGrid } from "@/components/projects/VideoGrid";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { Icon } from "@/components/ui/Icon";
 
@@ -110,6 +111,17 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             </aside>
           )}
         </div>
+
+        {project.videos && project.videos.length > 0 && (
+          <section aria-labelledby="videos-title" className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-20">
+            <h2 id="videos-title" className="eyebrow text-stone">
+              Best videos
+            </h2>
+            <div className="mt-5">
+              <VideoGrid videos={project.videos} />
+            </div>
+          </section>
+        )}
 
         <section aria-labelledby="gallery-title" className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-24">
           <h2 id="gallery-title" className="eyebrow text-stone">
