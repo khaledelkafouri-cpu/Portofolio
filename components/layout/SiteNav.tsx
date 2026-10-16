@@ -8,9 +8,7 @@ import { Icon } from "@/components/ui/Icon";
 import { ButtonLink } from "@/components/ui/Button";
 
 function isActive(href: string, pathname: string) {
-  if (href === "/") return pathname === "/";
-  if (href === "/#work") return pathname.startsWith("/work");
-  return false;
+  return href === pathname;
 }
 
 /** Desktop links + mobile disclosure menu. The only client component in the header. */

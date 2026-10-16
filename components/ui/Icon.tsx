@@ -7,6 +7,19 @@ const paths = {
   arrowLeft: <path d="M19 12H5M11 18l-6-6 6-6" />,
   download: <path d="M12 4v11M7 10l5 5 5-5M5 20h14" />,
   play: <path d="M8 5.5v13l11-6.5-11-6.5Z" />,
+  pause: <path d="M8 5v14M16 5v14" />,
+  volume: (
+    <>
+      <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+      <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
+    </>
+  ),
+  volumeOff: (
+    <>
+      <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+      <path d="m16 9 6 6M22 9l-6 6" />
+    </>
+  ),
   mail: (
     <>
       <rect x="3" y="5" width="18" height="14" rx="2" />

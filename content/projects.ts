@@ -1,9 +1,8 @@
 /**
- * Project / case-study content.
+ * Project content for the Selected Work cards on the homepage.
  *
- * Every project page and card reads from this file — add a new entry here to
- * add a project. Images without a `src` render as labelled placeholders until
- * the real asset is added to /public/assets/<project>/.
+ * Add a new entry here to add a project. Images without a `src` render as
+ * labelled placeholders until the real asset is added to /public/assets/<project>/.
  */
 
 export type MediaAsset = {
@@ -21,22 +20,12 @@ export type MediaAsset = {
 /** Background tone painted behind transparent images and placeholders. */
 export type ProjectTone = "sea" | "studio" | "espresso";
 
-/** One of the project's best videos: a cover that links out to the original post. */
-export type VideoItem = {
-  /** 3:4 cover image in /public, without a view count baked in (the site draws it). */
-  cover: string;
-  /** Short English caption shown under the cover. */
-  title: string;
-  /** Display string, e.g. "2.1M". */
-  views: string;
-  platform?: "YouTube" | "Instagram" | "TikTok" | "Facebook";
-  /** Link to the original post. Omit until known; the card then isn't clickable. */
-  href?: string;
-};
-
-export type CaseStudySection = {
-  heading: string;
-  body: string[];
+/** A short looping showreel that plays in the card in place of the hero image. */
+export type Showreel = {
+  /** H.264 MP4 in /public (muted autoplay, so keep it small and faststart). */
+  src: string;
+  /** Still frame shown while the video loads and behind it as a blurred backdrop. */
+  poster: string;
 };
 
 export type Project = {
@@ -52,22 +41,13 @@ export type Project = {
   /** Small badge in the card header: a logo image, or initials when no logo is supplied. */
   badge: { logo?: MediaAsset; initials: string };
   tone: ProjectTone;
-  /** Main card / case-study image. */
+  /** Card image, shown until a showreel is supplied. */
   hero: MediaAsset;
-  /** Exactly three supporting images — the 1 large + 3 small card composition. */
-  supporting: [MediaAsset, MediaAsset, MediaAsset];
-  gallery?: MediaAsset[];
-  videoUrl?: string;
-  /** Main project website. */
-  externalUrl?: string;
-  /** Other public profiles for the project, e.g. channels. */
-  links?: { label: string; href: string }[];
+  showreel?: Showreel;
+  /** The project's most-viewed video. The card link only appears once `href` is set. */
+  topVideo?: { title: string; views: string; href?: string };
   year?: string;
-  metrics?: { value: string; label: string }[];
   featured: boolean;
-  caseStudySections?: CaseStudySection[];
-  /** Best videos, shown as a cover grid on the case-study page. */
-  videos?: VideoItem[];
 };
 
 export const projects: Project[] = [
@@ -81,13 +61,6 @@ export const projects: Project[] = [
       "Content around fishing, adventure and outdoor lifestyle — combining real experiences, useful knowledge and audience-focused storytelling.",
     tags: ["YouTube", "Lifestyle"],
     year: "2020–Present",
-    externalUrl: "https://www.alexfisherofficial.com/",
-    links: [
-      { label: "YouTube", href: "https://www.youtube.com/@alexfisher_khaled" },
-      { label: "Instagram", href: "https://www.instagram.com/alexfisher_khaled/" },
-      { label: "TikTok", href: "https://www.tiktok.com/@alexfisher_khaled" },
-      { label: "Facebook", href: "https://www.facebook.com/AlexFisher.Fishing.Vlogs" },
-    ],
     badge: { initials: "AF" },
     tone: "sea",
     hero: {
@@ -96,54 +69,12 @@ export const projects: Project[] = [
       label: "Khaled / AlexFisher on the water",
       position: "38% 50%",
     },
-    supporting: [
-      {
-        src: "/assets/alexfisher/alexfisher-reel.webp",
-        alt: "Close-up of a spinning fishing reel on a rod, with the sea behind",
-        label: "Fishing reel",
-      },
-      {
-        src: "/assets/alexfisher/alexfisher-underwater.webp",
-        alt: "Underwater shot of a school of fish in blue sunlit water",
-        label: "Underwater",
-      },
-      {
-        src: "/assets/alexfisher/alexfisher-lure.webp",
-        alt: "Close-up of a fishing lure resting on wet coastal rocks",
-        label: "Fishing lure",
-      },
-    ],
-    gallery: [
-      {
-        src: "/assets/alexfisher/alexfisher-tiny-planet.webp",
-        alt: "Khaled holding up a fish and a fishing rod in a 360° tiny-planet shot of a palm-lined seafront",
-        label: "Tiny-planet catch",
-      },
-    ],
-    videos: [
-      {
-        cover: "/assets/alexfisher/videos/great-white-shark.webp",
-        title: "Why can't we keep a great white shark?",
-        views: "2.1M",
-      },
-    ],
+    showreel: {
+      src: "/assets/alexfisher/showreel/alexfisher-showreel.mp4",
+      poster: "/assets/alexfisher/showreel/alexfisher-showreel-poster.webp",
+    },
+    topVideo: { title: "Why can't we keep a great white shark?", views: "2.1M" },
     featured: true,
-    caseStudySections: [
-      {
-        heading: "The creator brand",
-        body: [
-          "AlexFisher is a creator and media brand built around fishing, adventure and outdoor lifestyle — real experiences on the water, practical know-how and storytelling made for the audience.",
-          "I built and manage a 600K+ cross-platform audience across YouTube, Facebook and Instagram, and own the full video lifecycle: research, concept, scripting, filming, editing, sound design, thumbnails, SEO, publishing and post-performance optimisation.",
-          "Videos and social content have reached millions of views, with audience data, retention and engagement signals feeding back into what gets made next.",
-        ],
-      },
-      {
-        heading: "The AlexFisher platform",
-        body: [
-          "Alongside the channel, AlexFisher is growing into a digital platform and product ecosystem. The full write-up of this side of the project is in progress.",
-        ],
-      },
-    ],
   },
   {
     slug: "bisi-and-friends",
@@ -165,49 +96,7 @@ export const projects: Project[] = [
       alt: "Bisi and Friends episode artwork: Bisi, Mia and classmates outside their school under the title “Our values become our superpowers!”",
       label: "Our Values Become Our Superpowers",
     },
-    supporting: [
-      {
-        src: "/assets/bisi-and-friends/bisi.png",
-        alt: "Bisi character portrait",
-        label: "Bisi",
-        position: "50% 4%",
-      },
-      {
-        src: "/assets/bisi-and-friends/funmi.png",
-        alt: "Funmi character portrait",
-        label: "Funmi",
-        position: "50% 6%",
-      },
-      {
-        src: "/assets/bisi-and-friends/mia.png",
-        alt: "Mia character portrait",
-        label: "Mia",
-        position: "50% 6%",
-      },
-    ],
-    gallery: [
-      {
-        src: "/assets/bisi-and-friends/episode-supers-special-lunch.webp",
-        alt: "Bisi and Friends episode artwork: a boy with a medical-alert lanyard rides a dinosaur under the title “Super's Special Lunch”",
-        label: "Super's Special Lunch",
-      },
-    ],
     featured: true,
-    caseStudySections: [
-      {
-        heading: "The project",
-        body: [
-          "Bisi and Friends is a children's storytelling series for TOC Publishing UK, following Bisi, Mia, Dr Funmi and their classmates through everyday stories with a message.",
-          "I produce social videos and AI story videos from script through AI-assisted production, character consistency, lip-sync, editing and final delivery.",
-        ],
-      },
-      {
-        heading: "Built for every platform",
-        body: [
-          "Each story is adapted for Instagram, TikTok and YouTube, alongside support for content planning, outreach and publishing.",
-        ],
-      },
-    ],
   },
   {
     slug: "costa-coffee",
@@ -227,46 +116,9 @@ export const projects: Project[] = [
       label: "Costa Coffee team",
       position: "50% 45%",
     },
-    supporting: [
-      {
-        src: "/assets/costa/costa-barista-machine.webp",
-        alt: "Costa barista working at the espresso machine under the Famously Frothy menu board",
-        label: "Barista",
-        position: "50% 30%",
-      },
-      {
-        src: "/assets/costa/costa-latte-pour.webp",
-        alt: "Costa barista pouring steamed milk into a cup at the counter",
-        label: "Latte pour",
-        position: "50% 30%",
-      },
-      {
-        src: "/assets/costa/costa-cup.webp",
-        alt: "Costa Coffee takeaway cup",
-        label: "Costa cup",
-        fit: "contain",
-      },
-    ],
     featured: true,
-    caseStudySections: [
-      {
-        heading: "The work",
-        body: [
-          "Instagram video, photography and branded social assets for Costa Coffee in South West London — focused on stronger engagement, visual consistency and local audience relevance.",
-          "I planned, shot and edited the content while monitoring performance and refining the creative direction.",
-        ],
-      },
-    ],
   },
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
 
-export function getProject(slug: string): Project | undefined {
-  return projects.find((project) => project.slug === slug);
-}
-
-export function getNextProject(slug: string): Project {
-  const index = projects.findIndex((project) => project.slug === slug);
-  return projects[(index + 1) % projects.length];
-}
