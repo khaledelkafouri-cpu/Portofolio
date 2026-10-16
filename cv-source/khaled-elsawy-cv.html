@@ -9,33 +9,41 @@
 <meta charset="utf-8">
 <title>Khaled Elsawy — CV</title>
 <style>
+  @font-face { font-family: "Inter"; font-weight: 400; font-style: normal; src: url(fonts/inter-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 400; font-style: italic; src: url(fonts/inter-latin-400-italic.woff2) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 600; font-style: normal; src: url(fonts/inter-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 700; font-style: normal; src: url(fonts/inter-latin-700-normal.woff2) format("woff2"); }
+
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
-    color: #222; font-size: 8.8pt; line-height: 1.27;
-    padding: 22pt 34pt 16pt;
+    font-family: "Inter", "Liberation Sans", Arial, sans-serif;
+    color: #26262a; font-size: 8.4pt; line-height: 1.32;
+    font-feature-settings: "kern", "liga";
+    padding: 20pt 34pt 12pt;
   }
   a { color: inherit; text-decoration: none; }
-  .head { background: #f2f1ef; padding: 14pt 20pt 10pt; text-align: center; }
-  .head h1 { font-size: 24pt; line-height: 1.1; color: #2b2b2b; }
-  .head .role { font-style: italic; font-size: 12pt; color: #444; margin-top: 5pt; }
-  .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 3pt 18pt; margin-top: 9pt; font-size: 9pt; color: #333; }
-  .contact a { border-bottom: 0.5pt solid #bbb; }
-  .summary { margin-top: 10pt; font-size: 9.2pt; }
+  .head { background: #f3f2ef; padding: 12pt 20pt 10pt; text-align: center; }
+  .head h1 { font-size: 22pt; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: #18181b; }
+  .head .role { font-size: 10.5pt; font-weight: 600; color: #8c1c2c; margin-top: 4pt; letter-spacing: 0.01em; }
+  .contact { margin-top: 7pt; font-size: 8.4pt; color: #3f3f46; }
+  .contact + .contact { margin-top: 2pt; }
+  .summary { margin-top: 5pt; }
   .summary p + p { margin-top: 3pt; }
-  h2 { font-size: 11.5pt; font-weight: bold; color: #222; margin-top: 11pt; padding-bottom: 3pt; border-bottom: 0.8pt solid #333; }
-  .job { display: grid; grid-template-columns: 112pt 1fr; margin-top: 7pt; }
-  .meta { font-style: italic; color: #555; font-size: 9pt; }
-  .job h3 { font-size: 10pt; }
-  .org { font-style: italic; color: #555; font-size: 9.4pt; }
-  .job ul { list-style: none; margin-top: 3pt; }
-  .job li { padding-left: 9pt; text-indent: -6pt; margin-top: 2.5pt; }
-  .job li::before { content: "• "; }
-  .skills { margin-top: 6pt; display: grid; grid-template-columns: 128pt 1fr; }
-  .skills dt { font-weight: bold; font-size: 9pt; padding: 4pt 4pt 4pt 3pt; }
-  .skills dd { background: #f2f1ef; padding: 4pt 8pt; font-size: 8.6pt; }
-  .edu { margin-top: 6pt; font-weight: bold; font-size: 9pt; }
+  h2 { font-size: 10pt; font-weight: 700; color: #18181b; margin-top: 10pt; padding-bottom: 3pt; border-bottom: 0.75pt solid #18181b; }
+  .job { margin-top: 6.5pt; }
+  .jobhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .job h3 { font-size: 9.4pt; font-weight: 600; color: #18181b; }
+  .dates { font-size: 8.4pt; color: #52525b; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .org { font-style: italic; color: #52525b; font-size: 8.6pt; margin-top: 0.5pt; }
+  .job ul { list-style: none; margin-top: 2.5pt; }
+  .job li { padding-left: 9pt; text-indent: -6pt; margin-top: 2pt; }
+  .job li::before { content: "• "; color: #71717a; }
+  .skills { margin-top: 6pt; display: grid; grid-template-columns: 112pt 1fr; }
+  .skills dt { font-weight: 600; font-size: 8.2pt; padding: 4pt 4pt 4pt 3pt; color: #18181b; }
+  .skills dd { background: #f3f2ef; padding: 4pt 8pt; }
+  .edu { margin-top: 6pt; }
+  .edu p { font-weight: 600; }
   .edu p + p { margin-top: 2pt; }
   .tools { margin-top: 6pt; }
 </style>
@@ -43,32 +51,23 @@
 <body>
   <header class="head">
     <h1>Khaled Elsawy</h1>
-    <p class="role">Social Media Content Creator</p>
-    <p class="contact">
-      <a href="mailto:elsawykhaled662@gmail.com">elsawykhaled662@gmail.com</a>
-      <!--PHONE-->
-      <a href="https://www.linkedin.com/in/khaled-elsawy-695463a2/">LinkedIn</a>
-      <a href="https://www.behance.net/khaledkafouri">Behance</a>
-      <a href="https://www.youtube.com/@alexfisher_khaled">YouTube</a>
-      <a href="https://www.instagram.com/alexfisher_khaled/">Instagram</a>
-      <a href="https://www.tiktok.com/@alexfisher_khaled">TikTok</a>
-      <a href="https://www.facebook.com/AlexFisher.Fishing.Vlogs">Facebook</a>
-      <a href="https://www.alexfisherofficial.com/">alexfisherofficial.com</a>
-    </p>
+    <p class="role"><!--H-->Social Media Content Creator | Video Producer<!--/H--></p>
+    <!-- Plain text with separators so ATS parsers read each line in order. -->
+    <p class="contact">Alexandria, Egypt | <a href="mailto:elsawykhaled662@gmail.com">elsawykhaled662@gmail.com</a><!--PHONE--></p>
+    <p class="contact"><a href="https://www.linkedin.com/in/khaled-elsawy-695463a2/">linkedin.com/in/khaled-elsawy-695463a2</a></p>
   </header>
 
+  <h2>PROFILE</h2>
   <section class="summary">
-    <p>Social Media Content Creator specialising in taking content from idea to audience. Built a personal media brand with 600K+ followers/subscribers across platforms, with videos generating millions of views and strong organic reach.</p>
-    <p>MBA in Digital Marketing, combining hands-on production with content strategy, audience growth and performance analysis; now using AI and vibe coding to build websites, dashboards and workflow tools that make content operations faster and easier to manage.</p>
+    <p><!--S-->Social Media Content Creator<!--/S--> and Video Producer with 6+ years&#39; experience taking content from idea to audience, handling strategy, filming, editing and publishing end to end. Built AlexFisher, a personal media brand with 600K+ followers and millions of organic video views, and created social content for brands including Costa Coffee and TOC Publishing UK. Skilled in short-form video (Instagram Reels, TikTok, YouTube Shorts), social media management, community engagement and performance analytics. MBA in Digital Marketing; uses AI-assisted production and workflow tools to speed up content delivery.</p>
   </section>
 
   <h2>PROFESSIONAL EXPERIENCE</h2>
 
   <div class="job">
-    <p class="meta">Creator Brand<br>2020 – Present</p>
     <div>
-      <h3>Founder, Video Producer &amp; Social Media Creator</h3>
-      <p class="org"><a href="https://www.alexfisherofficial.com/">AlexFisher</a></p>
+      <div class="jobhead"><h3>Founder, Video Producer &amp; Social Media Creator</h3><p class="dates">Mar 2020 – Present</p></div>
+      <p class="org"><a href="https://www.alexfisherofficial.com/">AlexFisher</a> · Creator Brand · alexfisherofficial.com</p>
       <ul>
         <li>Built and managed a 600K+ cross-platform audience across YouTube, Facebook and Instagram, producing original marine, fishing and lifestyle content.</li>
         <li>Own the full video lifecycle: research, concept, scripting, filming, editing, sound design, thumbnails, SEO, publishing and post-performance optimisation.</li>
@@ -78,22 +77,20 @@
   </div>
 
   <div class="job">
-    <p class="meta">United Kingdom<br>2026 – Present</p>
     <div>
-      <h3>AI Video Producer, Content &amp; Social Media</h3>
-      <p class="org">TOC Publishing UK</p>
+      <div class="jobhead"><h3>AI Video Producer, Content &amp; Social Media</h3><p class="dates">Jan 2025 – Present</p></div>
+      <p class="org">TOC Publishing UK · United Kingdom</p>
       <ul>
-        <li>Produce social videos and AI Story videos from script through AI-assisted production, character consistency, lip-sync, editing and final delivery.</li>
+        <li>Produce the <i>Bisi and Friends</i> children's story series as social videos and AI Story videos, from script through AI-assisted production, character consistency, lip-sync, editing and final delivery.</li>
         <li>Adapt creative assets for Instagram, TikTok and YouTube while supporting content planning, outreach and publishing.</li>
       </ul>
     </div>
   </div>
 
   <div class="job">
-    <p class="meta">London, UK<br>2025 – 2026</p>
     <div>
-      <h3>Social Media Content Creator</h3>
-      <p class="org">Costa Coffee – South West London, UK</p>
+      <div class="jobhead"><h3>Social Media Content Creator</h3><p class="dates">Oct 2025 – May 2026</p></div>
+      <p class="org">Costa Coffee · South West London, UK</p>
       <ul>
         <li>Created Instagram video, photography and branded social assets focused on stronger engagement, visual consistency and local audience relevance.</li>
         <li>Planned, shot and edited social content while monitoring performance and refining creative direction.</li>
@@ -102,10 +99,9 @@
   </div>
 
   <div class="job">
-    <p class="meta">Remote / Global<br>2023 – Present</p>
     <div>
-      <h3>Video Producer &amp; AI Content Creator</h3>
-      <p class="org">Freelance</p>
+      <div class="jobhead"><h3>Video Producer &amp; AI Content Creator</h3><p class="dates">Mar 2023 – Present</p></div>
+      <p class="org">Freelance · Remote</p>
       <ul>
         <li>Create short- and long-form branded video using Adobe Creative Cloud and generative AI, combining traditional production with faster AI-assisted ideation and versioning.</li>
       </ul>
@@ -115,13 +111,13 @@
   <h2>PROFESSIONAL SKILLS</h2>
   <dl class="skills">
     <dt>CONTENT CREATION &amp;<br>VIDEO PRODUCTION</dt>
-    <dd>Concept Development • Scriptwriting • Storytelling • Filming • Video Editing • Short-Form Video • Long-Form Video • Sound Design • Motion Graphics • AI-Assisted Production</dd>
+    <dd>Scriptwriting • Storytelling • Filming • Videography • Video Editing • Short-Form Video • Long-Form Video • Sound Design • Motion Graphics • Thumbnail Design • AI-Assisted Production</dd>
     <dt>SOCIAL MEDIA</dt>
-    <dd>Instagram • TikTok • YouTube • Facebook • Content Planning • Publishing • Community Engagement • Platform Optimisation • Audience Growth • Social Analytics</dd>
+    <dd>Social Media Management • Content Calendar &amp; Planning • Trend Research • UGC-Style Content • Creator &amp; Influencer Content • Instagram Reels • TikTok • YouTube &amp; YouTube Shorts • Facebook • Publishing &amp; Scheduling • Community Management • Platform Optimisation • Audience Growth • Social Media Analytics &amp; Reporting</dd>
     <dt>DIGITAL MARKETING &amp;<br>STRATEGY</dt>
-    <dd>Content Strategy • Digital Marketing Strategy • Campaign Planning • SEO • Audience Insight • Performance Analysis • Meta Ads • Google Analytics • Brand Consistency</dd>
-    <dt>AI SYSTEMS &amp;<br>VIBE CODING</dt>
-    <dd>AI-Assisted Development • Websites • Dashboards • Internal Tools • Workflow Automation • Content Systems • Process Optimisation • Claude Code • Codex • VS Code</dd>
+    <dd>Content Strategy • Digital Marketing Strategy • Campaign Planning • SEO • Audience Insight • Performance Analysis &amp; KPIs • Google Analytics • Brand Consistency • CRM</dd>
+    <dt>AI SYSTEMS &amp;<br>AUTOMATION</dt>
+    <dd>AI-Assisted Development (Vibe Coding) • Websites • Dashboards • Internal Tools • Workflow Automation • Content Systems • Process Optimisation</dd>
   </dl>
 
   <h2>EDUCATION</h2>
@@ -131,6 +127,6 @@
   </div>
 
   <h2>TOOLS</h2>
-  <p class="tools">Premiere Pro • After Effects • Photoshop • Higgsfield • Kling • ElevenLabs • ChatGPT • Claude • Claude Code • Codex • VS Code • Google Analytics • Meta Ads</p>
+  <p class="tools">Premiere Pro • After Effects • Photoshop • Canva • CapCut • Higgsfield • Kling • ElevenLabs • ChatGPT • Claude • Claude Code • Codex • VS Code • Google Analytics • Meta Ads</p>
 </body>
 </html>

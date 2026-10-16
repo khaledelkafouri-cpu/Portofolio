@@ -39,5 +39,5 @@ reference/            Design reference
 ## Editing content
 
 - **Projects:** add or edit entries in `content/projects.ts`. Every project has 1 hero image + exactly 3 supporting images. Any image without a `src` renders as a labelled "image coming soon" placeholder — add the file to `public/assets/<project>/` and set `src`.
-- **Contact, socials, CV:** set `email`, `socials[].href` and `cvUrl` in `content/site.ts`. The "Get In Touch" button, social links and "Download CV" button only render once these are set.
-- **CV:** the downloadable PDF at `public/cv/khaled-elsawy-cv.pdf` is generated from `cv-source/khaled-elsawy-cv.html`. Edit the HTML, then run `node cv-source/render.mjs` (needs Playwright available). The public CV deliberately has no phone number; `PHONE="+44 …" OUT=private.pdf node cv-source/render.mjs` produces a private copy with one.
+- **Contact, socials:** set `email` and `socials[].href` in `content/site.ts`. The "Get In Touch" button and social links only render once these are set. A "Download CV" button can be re-enabled by putting a PDF in `public/` and setting `cvUrl`.
+- **CV:** the CV is not published on the site. It is generated from `cv-source/khaled-elsawy-cv.html`: edit the HTML, then run `node cv-source/render.mjs` (needs Playwright available) to write `cv-source/dist/khaled-elsawy-cv.pdf` (git-ignored). Add a phone number with `PHONE="+20 …"` and tailor the headline with `HEADLINE="…"`.
