@@ -1,4 +1,4 @@
-// Renders cv-source/khaled-elsawy-cv.html to public/cv/khaled-elsawy-cv.pdf.
+// Renders cv-source/khaled-elsawy-cv.html to cv-source/dist/khaled-elsawy-cv.pdf (git-ignored; the CV is not published on the site).
 // Requires Playwright (not a project dependency): `npx playwright` or a global install.
 // Optional: PHONE="+20 ..." OUT=path.pdf adds a phone number for a private copy.
 // Optional: HEADLINE="Social Media Executive | Video Producer" swaps the title line; its first part
@@ -8,7 +8,7 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
-const out = process.env.OUT ?? here("../public/cv/khaled-elsawy-cv.pdf");
+const out = process.env.OUT ?? here("./dist/khaled-elsawy-cv.pdf");
 let html = await readFile(here("./khaled-elsawy-cv.html"), "utf8");
 // Inline the Inter font files (cv-source/fonts, SIL OFL) so the PDF embeds them.
 html = await inlineFonts(html);
