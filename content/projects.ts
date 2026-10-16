@@ -45,7 +45,12 @@ export type Project = {
   hero: MediaAsset;
   showreel?: Showreel;
   /** The project's most-viewed video. The card link only appears once `href` is set. */
-  topVideo?: { title: string; views: string; href?: string };
+  topVideo?: {
+    href?: string;
+    title?: string;
+    /** Display string, e.g. "2.1M". */
+    views?: string;
+  };
   year?: string;
   featured: boolean;
 };
@@ -120,6 +125,7 @@ export const projects: Project[] = [
       label: "Costa Coffee team",
       position: "50% 45%",
     },
+    topVideo: { href: "https://www.instagram.com/reels/DUsKvuaAusc/" },
     featured: true,
   },
 ];

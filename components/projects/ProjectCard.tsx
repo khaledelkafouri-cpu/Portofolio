@@ -52,9 +52,11 @@ export function ProjectCard({ project }: { project: Project }) {
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block font-medium group-hover:underline">Watch top video</span>
-                <span className="block truncate text-stone">
-                  {topVideo.views} views · {topVideo.title}
-                </span>
+                {(topVideo.views || topVideo.title) && (
+                  <span className="block truncate text-stone">
+                    {[topVideo.views && `${topVideo.views} views`, topVideo.title].filter(Boolean).join(" · ")}
+                  </span>
+                )}
               </span>
               <Icon name="external" className="size-4 shrink-0 text-stone" />
               <span className="sr-only">(opens in a new tab)</span>
