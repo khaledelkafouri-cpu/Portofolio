@@ -6,12 +6,10 @@
  * or invented link.
  */
 
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000")
-).replace(/\/$/, "");
+/** Live production address. Override with NEXT_PUBLIC_SITE_URL (e.g. once a custom domain is added). */
+const PRODUCTION_URL = "https://khaledelsawy.vercel.app";
+
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? PRODUCTION_URL).replace(/\/$/, "");
 
 export type SocialLink = {
   label: string;
