@@ -36,13 +36,16 @@ export type Project = {
   /** Project type shown on cards, e.g. "Creator Brand". */
   category: string;
   description: string;
-  /** First two are shown on cards. */
-  tags: string[];
+  /** What Khaled did on the project, shown as chips on the card. */
+  skills: string[];
+  tools: string[];
   /** Small badge in the card header: a logo image, or initials when no logo is supplied. */
   badge: { logo?: MediaAsset; initials: string };
   tone: ProjectTone;
   /** Card image, shown until a showreel is supplied. */
   hero: MediaAsset;
+  /** Exactly three stills shown in a row under the description. */
+  supporting: [MediaAsset, MediaAsset, MediaAsset];
   showreel?: Showreel;
   /** The project's most-viewed video. The card link only appears once `href` is set. */
   topVideo?: {
@@ -64,7 +67,8 @@ export const projects: Project[] = [
     category: "Creator Brand",
     description:
       "My own fishing and outdoor channel. I film, edit and publish every video myself, and have built an audience of 600K+ across YouTube, Facebook and Instagram.",
-    tags: ["YouTube", "Lifestyle"],
+    skills: ["Filming", "Editing", "Sound design", "Thumbnails", "YouTube SEO"],
+    tools: ["Premiere Pro", "After Effects", "Photoshop"],
     year: "2020 to present",
     badge: { initials: "AF" },
     tone: "sea",
@@ -74,6 +78,23 @@ export const projects: Project[] = [
       label: "Khaled / AlexFisher on the water",
       position: "38% 50%",
     },
+    supporting: [
+      {
+        src: "/assets/alexfisher/alexfisher-reel.webp",
+        alt: "Close-up of a spinning fishing reel on a rod, with the sea behind",
+        label: "Fishing reel",
+      },
+      {
+        src: "/assets/alexfisher/alexfisher-underwater.webp",
+        alt: "Underwater shot of a school of fish in blue sunlit water",
+        label: "Underwater",
+      },
+      {
+        src: "/assets/alexfisher/alexfisher-lure.webp",
+        alt: "Close-up of a fishing lure resting on wet coastal rocks",
+        label: "Fishing lure",
+      },
+    ],
     showreel: {
       src: "/assets/alexfisher/showreel/alexfisher-showreel.mp4",
       poster: "/assets/alexfisher/showreel/alexfisher-showreel-poster.webp",
@@ -93,7 +114,8 @@ export const projects: Project[] = [
     category: "AI Video Production",
     description:
       "AI-animated children's stories for TOC Publishing UK. I take each episode from script to final cut, keeping the characters consistent, and adapt it for Instagram, TikTok and YouTube.",
-    tags: ["AI Video", "Children's Content"],
+    skills: ["AI animation", "Character consistency", "Lip-sync", "Editing"],
+    tools: ["Higgsfield", "Kling", "ElevenLabs", "Premiere Pro"],
     year: "2025 to present",
     badge: {
       initials: "TOC",
@@ -105,6 +127,26 @@ export const projects: Project[] = [
       alt: "Bisi and Friends episode artwork: Bisi, Mia and classmates outside their school under the title “Our values become our superpowers!”",
       label: "Our Values Become Our Superpowers",
     },
+    supporting: [
+      {
+        src: "/assets/bisi-and-friends/bisi.png",
+        alt: "Bisi character portrait",
+        label: "Bisi",
+        position: "50% 4%",
+      },
+      {
+        src: "/assets/bisi-and-friends/funmi.png",
+        alt: "Funmi character portrait",
+        label: "Funmi",
+        position: "50% 6%",
+      },
+      {
+        src: "/assets/bisi-and-friends/mia.png",
+        alt: "Mia character portrait",
+        label: "Mia",
+        position: "50% 6%",
+      },
+    ],
     showreel: {
       src: "/assets/bisi-and-friends/showreel/bisi-showreel.mp4",
       poster: "/assets/bisi-and-friends/showreel/bisi-showreel-poster.webp",
@@ -119,7 +161,8 @@ export const projects: Project[] = [
     category: "Social Media Content",
     description:
       "Instagram videos and photos for Costa Coffee in South West London. I planned, shot and edited the content, and used how each post performed to shape the next one.",
-    tags: ["Social Content", "Brand"],
+    skills: ["Filming", "Photography", "Editing", "Instagram content"],
+    tools: ["Premiere Pro", "Photoshop"],
     year: "2025 to 2026",
     badge: { initials: "CC" },
     tone: "espresso",
@@ -129,6 +172,26 @@ export const projects: Project[] = [
       label: "Costa Coffee team",
       position: "50% 45%",
     },
+    supporting: [
+      {
+        src: "/assets/costa/costa-barista-machine.webp",
+        alt: "Costa barista working at the espresso machine under the Famously Frothy menu board",
+        label: "Barista",
+        position: "50% 30%",
+      },
+      {
+        src: "/assets/costa/costa-latte-pour.webp",
+        alt: "Costa barista pouring steamed milk into a cup at the counter",
+        label: "Latte pour",
+        position: "50% 30%",
+      },
+      {
+        src: "/assets/costa/costa-cup.webp",
+        alt: "Costa Coffee takeaway cup",
+        label: "Costa cup",
+        fit: "contain",
+      },
+    ],
     showreel: {
       src: "/assets/costa/showreel/costa-showreel.mp4",
       poster: "/assets/costa/showreel/costa-showreel-poster.webp",

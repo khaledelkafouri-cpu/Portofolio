@@ -29,15 +29,25 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         </div>
 
-        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Tags">
-          {project.tags.slice(0, 2).map((tag) => (
-            <li key={tag} className="rounded-full border border-line px-2.5 py-1 text-[0.6875rem] font-medium text-stone">
-              {tag}
-            </li>
-          ))}
-        </ul>
+        <p className="mt-4 text-[0.9375rem] leading-relaxed text-stone">{project.description}</p>
 
-        <p className="mt-3 text-[0.9375rem] leading-relaxed text-stone">{project.description}</p>
+        <div className="mt-5 grid grid-cols-3 gap-2">
+          {project.supporting.map((media) => (
+            <ProjectMedia
+              key={media.label}
+              media={media}
+              tone={project.tone}
+              sizes="(min-width: 1024px) 130px, 33vw"
+              className="aspect-square rounded-md"
+              compact
+            />
+          ))}
+        </div>
+
+        <dl className="mt-5 space-y-3">
+          <ChipRow label="Skills" items={project.skills} />
+          <ChipRow label="Tools" items={project.tools} />
+        </dl>
 
         {topVideo?.href && (
           <div className="mt-auto pt-5">
@@ -65,5 +75,22 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
     </article>
+  );
+}
+
+function ChipRow({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div>
+      <dt className="eyebrow text-[0.625rem] text-stone">{label}</dt>
+      <dd className="mt-1.5">
+        <ul className="flex flex-wrap gap-1.5">
+          {items.map((item) => (
+            <li key={item} className="rounded-full border border-line px-2.5 py-1 text-[0.6875rem] font-medium text-ink">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </dd>
+    </div>
   );
 }
