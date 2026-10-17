@@ -39,7 +39,10 @@ export type Project = {
   /** What Khaled did on the project, shown as chips on the card. */
   skills: string[];
   tools: string[];
-  /** Small badge in the card header: a logo image, or initials when no logo is supplied. */
+  /**
+   * Small badge in the card header: a logo image, or initials when no logo is supplied.
+   * Use `fit: "cover"` for square logos with their own background so they fill the circle.
+   */
   badge: { logo?: MediaAsset; initials: string };
   tone: ProjectTone;
   /** Card image, shown until a showreel is supplied. */
@@ -70,7 +73,15 @@ export const projects: Project[] = [
     skills: ["Scripting", "Editing", "Post-production", "Performance analysis"],
     tools: ["Premiere Pro", "After Effects", "Photoshop"],
     year: "2020 to present",
-    badge: { initials: "AF" },
+    badge: {
+      initials: "AF",
+      logo: {
+        src: "/assets/logos/alexfisher-logo.webp",
+        alt: "AlexFisher logo",
+        label: "AlexFisher",
+        fit: "cover",
+      },
+    },
     tone: "sea",
     hero: {
       src: "/assets/alexfisher/alexfisher-catch-sunset.webp",
@@ -164,7 +175,15 @@ export const projects: Project[] = [
     skills: ["Film directing", "Videography", "Photography", "Editing", "Instagram content"],
     tools: ["Premiere Pro", "Photoshop"],
     year: "2025 to 2026",
-    badge: { initials: "CC" },
+    badge: {
+      initials: "CC",
+      logo: {
+        src: "/assets/logos/costa-coffee-logo.webp",
+        alt: "Costa Coffee logo",
+        label: "Costa Coffee",
+        fit: "cover",
+      },
+    },
     tone: "espresso",
     hero: {
       src: "/assets/costa/costa-team.webp",
