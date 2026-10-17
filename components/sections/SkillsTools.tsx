@@ -7,7 +7,7 @@ export function SkillsTools() {
     <section aria-labelledby="skills-title" className="border-t border-line bg-paper py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 xl:grid-cols-12 xl:gap-8">
         <SectionHeading id="skills-title" eyebrow="Tools I Use" title="Core Skills & Tools" className="xl:col-span-4">
-          <p>Industry-standard production tools alongside modern AI — organised by what they&apos;re used for.</p>
+          <p>Industry-standard production tools alongside modern AI, grouped by what I use them for.</p>
         </SectionHeading>
 
         <ul className="grid gap-4 sm:grid-cols-2 xl:col-span-8">

@@ -2,7 +2,7 @@
  * Site-wide content and configuration.
  *
  * Anything set to `null` is intentionally unset until the real value is
- * supplied — components hide the related UI rather than rendering a broken
+ * supplied; components hide the related UI rather than rendering a broken
  * or invented link.
  */
 
@@ -21,11 +21,12 @@ export const site = {
   url: siteUrl,
   title: "Khaled Elsawy | Social Media Content Creator & Video Producer",
   description:
-    "Khaled Elsawy is a Social Media Content Creator and Video Producer helping founder-led and growing brands turn ideas into consistent, high-quality social content — combining strategy, production, digital marketing and AI-assisted workflows.",
+    "Khaled Elsawy is a Social Media Content Creator and Video Producer helping founder-led and growing brands turn ideas into consistent, high-quality social content, combining strategy, production, digital marketing and AI-assisted workflows.",
   role: "Social Media Content Creator",
+  location: "Alexandria, Egypt",
   specialties: ["Video Producer", "Digital Marketing", "AI Content & Systems"],
   intro:
-    "I help founder-led and growing brands turn ideas into content that gets noticed — combining strategy, production, publishing and AI-assisted workflows.",
+    "I help founder-led and growing brands turn ideas into content that gets noticed. I handle the strategy, filming, editing and publishing, with AI built into how I work.",
 
   /** Public path to a CV PDF in /public, e.g. "/cv/khaled-elsawy-cv.pdf". Null hides the "Download CV" button. */
   cvUrl: null as string | null,
@@ -75,7 +76,7 @@ export const metrics = [
   },
   {
     icon: "calendar",
-    value: "2020–Present",
+    value: "Since 2020",
     label: "Creator Experience",
     detail: "Content creation, production and brand work",
   },

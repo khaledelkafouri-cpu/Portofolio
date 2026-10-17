@@ -9,7 +9,7 @@ export type MediaAsset = {
   /** Public path, e.g. "/assets/costa/cover.jpg". Omit until the real asset exists. */
   src?: string;
   alt: string;
-  /** Short description of the intended shot — shown on the placeholder. */
+  /** Short description of the intended shot, shown on the placeholder. */
   label: string;
   /** CSS object-position, e.g. "50% 10%". */
   position?: string;
@@ -63,9 +63,9 @@ export const projects: Project[] = [
     role: "Founder, video producer & social media creator",
     category: "Creator Brand",
     description:
-      "Content around fishing, adventure and outdoor lifestyle — combining real experiences, useful knowledge and audience-focused storytelling.",
+      "My own fishing and outdoor channel. I film, edit and publish every video myself, and have built an audience of 600K+ across YouTube, Facebook and Instagram.",
     tags: ["YouTube", "Lifestyle"],
-    year: "2020–Present",
+    year: "2020 to present",
     badge: { initials: "AF" },
     tone: "sea",
     hero: {
@@ -92,9 +92,9 @@ export const projects: Project[] = [
     role: "AI video producer, content & social media",
     category: "AI Video Production",
     description:
-      "Children's storytelling produced with AI-assisted animation, character consistency, lip-sync and multi-platform social adaptation.",
+      "AI-animated children's stories for TOC Publishing UK. I take each episode from script to final cut, keeping the characters consistent, and adapt it for Instagram, TikTok and YouTube.",
     tags: ["AI Video", "Children's Content"],
-    year: "2025–Present",
+    year: "2025 to present",
     badge: {
       initials: "TOC",
       logo: { src: "/assets/logos/toc-publishing-logo.png", alt: "TOC Publishing logo", label: "TOC Publishing" },
@@ -118,9 +118,9 @@ export const projects: Project[] = [
     role: "Social media content creator",
     category: "Social Media Content",
     description:
-      "Instagram video, photography and branded social content created for Costa Coffee in South West London.",
+      "Instagram videos and photos for Costa Coffee in South West London. I planned, shot and edited the content, and used how each post performed to shape the next one.",
     tags: ["Social Content", "Brand"],
-    year: "2025–2026",
+    year: "2025 to 2026",
     badge: { initials: "CC" },
     tone: "espresso",
     hero: {

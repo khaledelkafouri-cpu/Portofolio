@@ -1,5 +1,5 @@
 /**
- * Small set of generic line icons (24×24, stroke-based, adapted from Lucide —
+ * Small set of generic line icons (24×24, stroke-based, adapted from Lucide,
  * ISC licence). Brand logos are deliberately not drawn here.
  */
 const paths = {

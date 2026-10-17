@@ -8,8 +8,8 @@ export function SelectedWork() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading id="work-title" eyebrow="Selected Work" title="Projects & Collaborations" tone="dark">
           <p>
-            A selection of brands and projects I&apos;ve worked on — from creator content to commercial social campaigns
-            and AI-powered production.
+            Brands and projects I&apos;ve worked on, from my own creator channel to brand content and AI-animated
+            stories.
           </p>
         </SectionHeading>
 

@@ -23,7 +23,7 @@ export function ContactCTA() {
             Let&apos;s Create Something Great
           </h2>
           <p className="mt-5 max-w-lg text-[1.0625rem] leading-relaxed text-ash">
-            Whether it&apos;s a brand project, social media content, AI production or a new idea — I&apos;d love to
+            Whether it&apos;s a brand project, social media content, AI production or a new idea, I&apos;d love to
             hear from you.
           </p>
         </div>
