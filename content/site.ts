@@ -24,7 +24,7 @@ export const site = {
     "Khaled Elsawy is a Social Media Content Creator and Video Producer helping founder-led and growing brands turn ideas into consistent, high-quality social content, combining strategy, production, digital marketing and AI-assisted workflows.",
   role: "Social Media Content Creator",
   location: "Alexandria, Egypt",
-  specialties: ["Video Producer", "Digital Marketing", "AI Content & Systems"],
+  specialties: ["Video Producer & AI Content", "Digital Marketing", "AI Systems Solutions"],
   intro:
     "I help founder-led and growing brands turn ideas into content that gets noticed. I handle the strategy, filming, editing and publishing, with AI built into how I work.",
 

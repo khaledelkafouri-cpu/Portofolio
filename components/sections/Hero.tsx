@@ -20,17 +20,19 @@ export function Hero() {
             {site.name}
           </h1>
           <p className="mt-4 text-2xl font-light tracking-tight text-accent sm:text-[2rem]">{site.role}</p>
-          <p className="mt-3 text-[0.9375rem] text-ink/80 sm:text-lg">
-            {site.specialties.map((specialty, index) => (
-              <span key={specialty}>
-                {index > 0 && (
-                  <span aria-hidden="true" className="mx-2 text-accent">
+          {/* Every item carries a leading bullet; the negative margin + overflow clip hides the one
+              that starts each line, so wrapped lines never begin with a stray bullet. */}
+          <p className="mt-3 overflow-hidden text-[0.9375rem] text-ink/80 sm:text-lg">
+            <span className="-ml-5 flex flex-wrap">
+              {site.specialties.map((specialty) => (
+                <span key={specialty} className="whitespace-nowrap">
+                  <span aria-hidden="true" className="inline-block w-5 text-center text-accent">
                     •
                   </span>
-                )}
-                {specialty}
-              </span>
-            ))}
+                  {specialty}
+                </span>
+              ))}
+            </span>
           </p>
           <span aria-hidden="true" className="mt-7 block h-0.5 w-12 bg-accent" />
           <p className="mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-stone lg:text-ink/75">{site.intro}</p>
