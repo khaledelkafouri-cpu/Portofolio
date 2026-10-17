@@ -193,8 +193,8 @@ export const projects: Project[] = [
       },
     ],
     showreel: {
-      src: "/assets/costa/showreel/costa-showreel.mp4",
-      poster: "/assets/costa/showreel/costa-showreel-poster.webp",
+      src: "/assets/costa/showreel/costa-reel.mp4",
+      poster: "/assets/costa/showreel/costa-reel-poster.webp",
     },
     topVideo: { href: "https://www.instagram.com/reels/DUsKvuaAusc/" },
     featured: true,
