@@ -129,6 +129,10 @@ export const projects: Project[] = [
       label: "Costa Coffee team",
       position: "50% 45%",
     },
+    showreel: {
+      src: "/assets/costa/showreel/costa-showreel.mp4",
+      poster: "/assets/costa/showreel/costa-showreel-poster.webp",
+    },
     topVideo: { href: "https://www.instagram.com/reels/DUsKvuaAusc/" },
     featured: true,
   },
