@@ -10,8 +10,8 @@ export function About() {
             {clientFocus.statement}
           </h2>
           <p className="mt-6 max-w-xl leading-relaxed text-stone">
-            I&apos;ve been creating content since 2020 — building an audience of 600K+ across YouTube, Facebook and
-            Instagram — and hold an MBA in Digital Marketing from the University of East London. I bring strategy,
+            I&apos;ve been creating content since 2020. I&apos;ve built an audience of 600K+ across YouTube, Facebook and
+            Instagram, and I hold an MBA in Digital Marketing from the University of East London. I bring strategy,
             production, publishing and AI-assisted workflows together in one place.
           </p>
         </div>

@@ -12,7 +12,7 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="relative isolate overflow-hidden lg:flex lg:min-h-[640px] lg:items-center xl:min-h-[720px]">
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14 lg:py-24">
         <div className="max-w-2xl lg:max-w-[46%]">
-          <p className="eyebrow text-stone">{site.role}</p>
+          <p className="eyebrow text-stone">Based in {site.location}</p>
           <h1
             id="hero-title"
             className="mt-4 font-serif text-[3.25rem] leading-[0.95] tracking-[-0.02em] text-ink sm:text-7xl xl:text-[6.25rem]"

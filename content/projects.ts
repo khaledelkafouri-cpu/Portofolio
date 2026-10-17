@@ -1,16 +1,15 @@
 /**
- * Project / case-study content.
+ * Project content for the Selected Work cards on the homepage.
  *
- * Every project page and card reads from this file — add a new entry here to
- * add a project. Images without a `src` render as labelled placeholders until
- * the real asset is added to /public/assets/<project>/.
+ * Add a new entry here to add a project. Images without a `src` render as
+ * labelled placeholders until the real asset is added to /public/assets/<project>/.
  */
 
 export type MediaAsset = {
   /** Public path, e.g. "/assets/costa/cover.jpg". Omit until the real asset exists. */
   src?: string;
   alt: string;
-  /** Short description of the intended shot — shown on the placeholder. */
+  /** Short description of the intended shot, shown on the placeholder. */
   label: string;
   /** CSS object-position, e.g. "50% 10%". */
   position?: string;
@@ -21,9 +20,12 @@ export type MediaAsset = {
 /** Background tone painted behind transparent images and placeholders. */
 export type ProjectTone = "sea" | "studio" | "espresso";
 
-export type CaseStudySection = {
-  heading: string;
-  body: string[];
+/** A short looping showreel that plays in the card in place of the hero image. */
+export type Showreel = {
+  /** H.264 MP4 in /public (muted autoplay, so keep it small and faststart). */
+  src: string;
+  /** Still frame shown while the video loads and behind it as a blurred backdrop. */
+  poster: string;
 };
 
 export type Project = {
@@ -34,25 +36,26 @@ export type Project = {
   /** Project type shown on cards, e.g. "Creator Brand". */
   category: string;
   description: string;
-  /** First two are shown on cards. */
-  tags: string[];
+  /** What Khaled did on the project, shown as chips on the card. */
+  skills: string[];
+  tools: string[];
   /** Small badge in the card header: a logo image, or initials when no logo is supplied. */
   badge: { logo?: MediaAsset; initials: string };
   tone: ProjectTone;
-  /** Main card / case-study image. */
+  /** Card image, shown until a showreel is supplied. */
   hero: MediaAsset;
-  /** Exactly three supporting images — the 1 large + 3 small card composition. */
+  /** Exactly three stills shown in a row under the description. */
   supporting: [MediaAsset, MediaAsset, MediaAsset];
-  gallery?: MediaAsset[];
-  videoUrl?: string;
-  /** Main project website. */
-  externalUrl?: string;
-  /** Other public profiles for the project, e.g. channels. */
-  links?: { label: string; href: string }[];
+  showreel?: Showreel;
+  /** The project's most-viewed video. The card link only appears once `href` is set. */
+  topVideo?: {
+    href?: string;
+    title?: string;
+    /** Display string, e.g. "2.1M". */
+    views?: string;
+  };
   year?: string;
-  metrics?: { value: string; label: string }[];
   featured: boolean;
-  caseStudySections?: CaseStudySection[];
 };
 
 export const projects: Project[] = [
@@ -63,16 +66,10 @@ export const projects: Project[] = [
     role: "Founder, video producer & social media creator",
     category: "Creator Brand",
     description:
-      "Content around fishing, adventure and outdoor lifestyle — combining real experiences, useful knowledge and audience-focused storytelling.",
-    tags: ["YouTube", "Lifestyle"],
-    year: "2020–Present",
-    externalUrl: "https://www.alexfisherofficial.com/",
-    links: [
-      { label: "YouTube", href: "https://www.youtube.com/@alexfisher_khaled" },
-      { label: "Instagram", href: "https://www.instagram.com/alexfisher_khaled/" },
-      { label: "TikTok", href: "https://www.tiktok.com/@alexfisher_khaled" },
-      { label: "Facebook", href: "https://www.facebook.com/AlexFisher.Fishing.Vlogs" },
-    ],
+      "My own fishing and outdoor channel. I film, edit and publish every video myself, and have built an audience of 600K+ across YouTube, Facebook and Instagram.",
+    skills: ["Scripting", "Editing", "Post-production", "Performance analysis"],
+    tools: ["Premiere Pro", "After Effects", "Photoshop"],
+    year: "2020 to present",
     badge: { initials: "AF" },
     tone: "sea",
     hero: {
@@ -98,30 +95,16 @@ export const projects: Project[] = [
         label: "Fishing lure",
       },
     ],
-    gallery: [
-      {
-        src: "/assets/alexfisher/alexfisher-tiny-planet.webp",
-        alt: "Khaled holding up a fish and a fishing rod in a 360° tiny-planet shot of a palm-lined seafront",
-        label: "Tiny-planet catch",
-      },
-    ],
+    showreel: {
+      src: "/assets/alexfisher/showreel/alexfisher-showreel.mp4",
+      poster: "/assets/alexfisher/showreel/alexfisher-showreel-poster.webp",
+    },
+    topVideo: {
+      title: "Why can't we keep a great white shark?",
+      views: "2.1M",
+      href: "https://www.instagram.com/reel/DCCFrfzoFK7/",
+    },
     featured: true,
-    caseStudySections: [
-      {
-        heading: "The creator brand",
-        body: [
-          "AlexFisher is a creator and media brand built around fishing, adventure and outdoor lifestyle — real experiences on the water, practical know-how and storytelling made for the audience.",
-          "I built and manage a 600K+ cross-platform audience across YouTube, Facebook and Instagram, and own the full video lifecycle: research, concept, scripting, filming, editing, sound design, thumbnails, SEO, publishing and post-performance optimisation.",
-          "Videos and social content have reached millions of views, with audience data, retention and engagement signals feeding back into what gets made next.",
-        ],
-      },
-      {
-        heading: "The AlexFisher platform",
-        body: [
-          "Alongside the channel, AlexFisher is growing into a digital platform and product ecosystem. The full write-up of this side of the project is in progress.",
-        ],
-      },
-    ],
   },
   {
     slug: "bisi-and-friends",
@@ -130,9 +113,10 @@ export const projects: Project[] = [
     role: "AI video producer, content & social media",
     category: "AI Video Production",
     description:
-      "Children's storytelling produced with AI-assisted animation, character consistency, lip-sync and multi-platform social adaptation.",
-    tags: ["AI Video", "Children's Content"],
-    year: "2025–Present",
+      "AI-animated children's stories for TOC Publishing UK. I take each episode from script to final cut, keeping the characters consistent, and adapt it for Instagram, TikTok and YouTube.",
+    skills: ["AI animation", "Lip-sync", "Character design", "Scene directing", "Voice cloning", "Sound design"],
+    tools: ["Higgsfield", "Kling", "ElevenLabs", "ChatGPT", "Claude", "Premiere Pro"],
+    year: "2025 to present",
     badge: {
       initials: "TOC",
       logo: { src: "/assets/logos/toc-publishing-logo.png", alt: "TOC Publishing logo", label: "TOC Publishing" },
@@ -163,29 +147,11 @@ export const projects: Project[] = [
         position: "50% 6%",
       },
     ],
-    gallery: [
-      {
-        src: "/assets/bisi-and-friends/episode-supers-special-lunch.webp",
-        alt: "Bisi and Friends episode artwork: a boy with a medical-alert lanyard rides a dinosaur under the title “Super's Special Lunch”",
-        label: "Super's Special Lunch",
-      },
-    ],
+    showreel: {
+      src: "/assets/bisi-and-friends/showreel/bisi-showreel.mp4",
+      poster: "/assets/bisi-and-friends/showreel/bisi-showreel-poster.webp",
+    },
     featured: true,
-    caseStudySections: [
-      {
-        heading: "The project",
-        body: [
-          "Bisi and Friends is a children's storytelling series for TOC Publishing UK, following Bisi, Mia, Dr Funmi and their classmates through everyday stories with a message.",
-          "I produce social videos and AI story videos from script through AI-assisted production, character consistency, lip-sync, editing and final delivery.",
-        ],
-      },
-      {
-        heading: "Built for every platform",
-        body: [
-          "Each story is adapted for Instagram, TikTok and YouTube, alongside support for content planning, outreach and publishing.",
-        ],
-      },
-    ],
   },
   {
     slug: "costa-coffee",
@@ -194,9 +160,10 @@ export const projects: Project[] = [
     role: "Social media content creator",
     category: "Social Media Content",
     description:
-      "Instagram video, photography and branded social content created for Costa Coffee in South West London.",
-    tags: ["Social Content", "Brand"],
-    year: "2025–2026",
+      "Instagram videos and photos for Costa Coffee in South West London. I planned, shot and edited the content, and used how each post performed to shape the next one.",
+    skills: ["Film directing", "Videography", "Photography", "Editing", "Instagram content"],
+    tools: ["Premiere Pro", "Photoshop"],
+    year: "2025 to 2026",
     badge: { initials: "CC" },
     tone: "espresso",
     hero: {
@@ -225,26 +192,14 @@ export const projects: Project[] = [
         fit: "contain",
       },
     ],
+    showreel: {
+      src: "/assets/costa/showreel/costa-showreel.mp4",
+      poster: "/assets/costa/showreel/costa-showreel-poster.webp",
+    },
+    topVideo: { href: "https://www.instagram.com/reels/DUsKvuaAusc/" },
     featured: true,
-    caseStudySections: [
-      {
-        heading: "The work",
-        body: [
-          "Instagram video, photography and branded social assets for Costa Coffee in South West London — focused on stronger engagement, visual consistency and local audience relevance.",
-          "I planned, shot and edited the content while monitoring performance and refining the creative direction.",
-        ],
-      },
-    ],
   },
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
 
-export function getProject(slug: string): Project | undefined {
-  return projects.find((project) => project.slug === slug);
-}
-
-export function getNextProject(slug: string): Project {
-  const index = projects.findIndex((project) => project.slug === slug);
-  return projects[(index + 1) % projects.length];
-}
