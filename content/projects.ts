@@ -67,7 +67,7 @@ export const projects: Project[] = [
     category: "Creator Brand",
     description:
       "My own fishing and outdoor channel. I film, edit and publish every video myself, and have built an audience of 600K+ across YouTube, Facebook and Instagram.",
-    skills: ["Filming", "Editing", "Sound design", "Thumbnails", "YouTube SEO"],
+    skills: ["Scripting", "Editing", "Post-production", "Performance analysis"],
     tools: ["Premiere Pro", "After Effects", "Photoshop"],
     year: "2020 to present",
     badge: { initials: "AF" },
@@ -114,8 +114,8 @@ export const projects: Project[] = [
     category: "AI Video Production",
     description:
       "AI-animated children's stories for TOC Publishing UK. I take each episode from script to final cut, keeping the characters consistent, and adapt it for Instagram, TikTok and YouTube.",
-    skills: ["AI animation", "Character consistency", "Lip-sync", "Editing"],
-    tools: ["Higgsfield", "Kling", "ElevenLabs", "Premiere Pro"],
+    skills: ["AI animation", "Lip-sync", "Character design", "Scene directing", "Voice cloning", "Sound design"],
+    tools: ["Higgsfield", "Kling", "ElevenLabs", "ChatGPT", "Claude", "Premiere Pro"],
     year: "2025 to present",
     badge: {
       initials: "TOC",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     category: "Social Media Content",
     description:
       "Instagram videos and photos for Costa Coffee in South West London. I planned, shot and edited the content, and used how each post performed to shape the next one.",
-    skills: ["Filming", "Photography", "Editing", "Instagram content"],
+    skills: ["Film directing", "Videography", "Photography", "Editing", "Instagram content"],
     tools: ["Premiere Pro", "Photoshop"],
     year: "2025 to 2026",
     badge: { initials: "CC" },
