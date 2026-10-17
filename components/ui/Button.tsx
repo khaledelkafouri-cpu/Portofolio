@@ -1,6 +1,6 @@
-import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Icon, type IconName } from "./Icon";
+import { SiteLink, type SiteLinkProps } from "./SiteLink";
 
 type Variant = "primary" | "secondary" | "inverse" | "outline-inverse";
 
@@ -11,7 +11,7 @@ const variants: Record<Variant, string> = {
   "outline-inverse": "border border-paper/40 text-paper hover:border-paper hover:bg-paper/10",
 };
 
-type ButtonLinkProps = Omit<ComponentProps<typeof Link>, "children"> & {
+type ButtonLinkProps = Omit<SiteLinkProps, "children"> & {
   children: ReactNode;
   variant?: Variant;
   iconStart?: IconName;
@@ -31,7 +31,7 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   const sizing = size === "md" ? "min-h-12 px-6 text-[0.9375rem]" : "min-h-11 px-5 text-sm";
   return (
-    <Link
+    <SiteLink
       className={`group inline-flex items-center justify-center gap-2.5 rounded-md font-medium tracking-tight transition-colors duration-200 ${sizing} ${variants[variant]} ${className}`}
       {...props}
     >
@@ -43,6 +43,6 @@ export function ButtonLink({
           className="size-[1.125rem] transition-transform duration-200 group-hover:translate-x-0.5"
         />
       )}
-    </Link>
+    </SiteLink>
   );
 }
