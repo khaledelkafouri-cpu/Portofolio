@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { navigation, site } from "@/content/site";
 import { Monogram } from "@/components/ui/Monogram";
+import { SiteLink } from "@/components/ui/SiteLink";
 
 export function Footer() {
   return (
@@ -11,12 +11,12 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-7 gap-y-1">
             {navigation.map((item) => (
               <li key={item.href}>
-                <Link
+                <SiteLink
                   href={item.href}
                   className="inline-flex min-h-11 items-center text-sm transition-colors hover:text-paper"
                 >
                   {item.label}
-                </Link>
+                </SiteLink>
               </li>
             ))}
           </ul>

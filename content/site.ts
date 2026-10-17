@@ -49,7 +49,7 @@ export const site = {
 } as const;
 
 export const navigation = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/#top" },
   { label: "Work", href: "/#work" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },

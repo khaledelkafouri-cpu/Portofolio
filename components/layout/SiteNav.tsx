@@ -1,14 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/content/site";
 import { Icon } from "@/components/ui/Icon";
 import { ButtonLink } from "@/components/ui/Button";
+import { SiteLink } from "@/components/ui/SiteLink";
 
+// Everything is on one page, so only Home carries the current-page marker.
 function isActive(href: string, pathname: string) {
-  return href === pathname;
+  return href === "/#top" && pathname === "/";
 }
 
 /** Desktop links + mobile disclosure menu. The only client component in the header. */
@@ -41,7 +42,7 @@ export function SiteNav() {
             const active = isActive(item.href, pathname);
             return (
               <li key={item.href}>
-                <Link
+                <SiteLink
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={`relative py-2 text-sm transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-ink after:transition-transform ${
@@ -51,7 +52,7 @@ export function SiteNav() {
                   }`}
                 >
                   {item.label}
-                </Link>
+                </SiteLink>
               </li>
             );
           })}
@@ -86,7 +87,7 @@ export function SiteNav() {
           <ul className="divide-y divide-line border-b border-line">
             {navigation.map((item) => (
               <li key={item.href}>
-                <Link
+                <SiteLink
                   href={item.href}
                   onClick={() => setOpen(false)}
                   aria-current={isActive(item.href, pathname) ? "page" : undefined}
@@ -94,7 +95,7 @@ export function SiteNav() {
                 >
                   {item.label}
                   <Icon name="arrowRight" className="size-5 text-stone" />
-                </Link>
+                </SiteLink>
               </li>
             ))}
           </ul>
